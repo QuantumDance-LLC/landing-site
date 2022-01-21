@@ -22,8 +22,8 @@
 <meta property="og:description" content="The ls command is the most commonly used command in Linux. ls is short for list, and by default ls is used to print out a list of the current directory.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://codelink.ai/blog/devops/a-linux-command-a-day-1-ls-command/"><meta property="article:section" content="blog">
-<meta property="article:published_time" content="2021-07-13T15:40:24+06:00">
-<meta property="article:modified_time" content="2021-07-13T15:40:24+06:00">
+<meta property="article:published_time" content="2021-09-13T15:40:24+06:00">
+<meta property="article:modified_time" content="2021-09-13T15:40:24+06:00">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6LQHFY4FG7"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-6LQHFY4FG7',{anonymize_ip:!1})}</script>
 <link rel="shortcut icon" href=https://codelink.ai/images/favicon.ico type=image/x-icon>
@@ -71,7 +71,7 @@
 </div>
 <div class="col-lg-6 col-md-6 text-md-right text-center">
 <ul class=list-inline>
-<li class="list-inline-item mx-0 border-right border-secondary"><a class="text-white d-inline-block px-lg-3 px-2 py-1 py-md-0" href=mailto:info@codelink.ai>info@codelink.ai</a></li>
+<li class="list-inline-item mx-0 border-right border-secondary"><a class="text-white d-inline-block px-lg-3 px-2 py-1 py-md-0" href=mailto:codelink.ai@gmail.com>codelink.ai@gmail.com</a></li>
 <li class="list-inline-item mx-0"><a class="text-white d-inline-block px-lg-3 px-2 py-1 py-md-0" href=tel:+1-832-303-0728>Call Now: <span class=text-primary>+1-832-303-0728</span></a></li>
 </ul>
 </div>
@@ -187,240 +187,136 @@ Blog
 </div>
 </div>
 </a>
-<div class="card-meta text-uppercase mb-2">by <strong class=text-dark>Admin</strong>/ on <strong class=text-dark>13 Jul 2021</strong></div>
+<div class="card-meta text-uppercase mb-2">by <strong class=text-dark>Admin</strong>/ on <strong class=text-dark>13 Sep 2021</strong></div>
 <h2>A Linux command a day (1): ls command</h2>
 <div class=content>
 <hr>
-<p>The <code>ls</code> command is the most commonly used command in Linux. <code>ls</code> is short for list, and by default <code>ls</code> is used to print out a list of the current directory.</p>
-<p>If <code>ls</code> specifies another directory, then it will display a list of files and folders in the specified directory. The <code>ls</code> command allows you to view not only the files contained in a Linux folder but also the file permissions (including directory, folder, and file permissions), directory information, and more.</p>
-<p>The <code>ls</code> command is used a lot in daily Linux operations!</p>
-<h3 id=1-command-format>1. Command format</h3>
-<hr>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>ls <span style=color:#ff79c6>[</span>option<span style=color:#ff79c6>]</span> <span style=color:#ff79c6>[</span>directory name<span style=color:#ff79c6>]</span>
-</code></pre></div><h3 id=2-command-function>2. Command function</h3>
-<hr>
-<p>List all the subdirectories and files in the target directory. 3.</p>
-<h3 id=3-common-parameters>3. Common parameters</h3>
-<hr>
-<pre tabindex=0><code>-a, -all List all the files in the directory, including the implicit files starting with . including the implied files starting with .
+<p>The Linux mkdir command is used to create a directory with the specified name. It requires the user creating the directory to have write permission in the current directory, and the specified directory name cannot be an existing directory in the current directory.</p>
+<h3 id=1-command-format>1. Command Format</h3>
+<p><code>mkdir [option] directory</code></p>
+<h3 id=2-command-function>2. Command function</h3>
+<p>The mkdir command enables you to create a folder or directory named with DirName (the specified file name) in the specified location. The user who wants to create the folder or directory must have write access to the parent folder of the created folder.</p>
+<p>Also, the created folder (directory) cannot have the same name as the file name in its parent directory (i.e., parent folder), i.e., it cannot have the same name in the same directory (case-sensitive).</p>
+<h3 id=3-command-parameters>3. Command parameters</h3>
+<pre tabindex=0><code> -m, --mode=mode, set permissions &lt;mode&gt; (similar to chmod) instead of rwxrwxrwx minus umask
 
--A is the same as -a, but does not list &quot;.&quot; (for the current directory) and &quot;...&quot; (for the parent of the current directory).
+ -p, --parents can be a path name. If some directories in the path do not exist yet, adding this option will automatically create those that do not exist yet, i.e. multiple directories can be created at once.
 
--c with -lt: sort by ctime and show ctime (when the file status was last changed) with -l: show ctime but sort by name otherwise: sort by ctime
+ -v, --verbose show information every time a new directory is created  
+   --help displays this help and exits  
+   --version output version information and exit`
+</code></pre><h3 id=4-command-examples>4. Command examples</h3>
+<h4 id=example-1-create-an-empty-directory>Example 1: Create an empty directory</h4>
+<p>Command.</p>
+<p><code>mkdir test1</code></p>
+<p>Output.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost soft<span style=color:#ff79c6>]</span><span style=color:#6272a4># cd test  </span>
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># mkdir test1  </span>
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># ll</span>
 
--C List items from top to bottom in each column
+Total <span style=color:#bd93f9>4</span>
 
--WHEN can be 'never', 'always' or 'auto ' either
+drwxr-xr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 10-25 17:42 test1  
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4>#  </span>
+</code></pre></div><h4 id=example-2-recursively-create-multiple-directories>Example 2: Recursively create multiple directories</h4>
+<p>Command.</p>
+<p><code>mkdir -p test2/test22</code></p>
+<p>Output.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># mkdir -p test2/test22  </span>
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># ll</span>
 
--d, -directory Displays directories as files, instead of showing the files under them.
+Total <span style=color:#bd93f9>8</span>
 
--D, -dired produces results suitable for use in Emacs' dired mode
+drwxr-xr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 10-25 17:42 test1  
+drwxr-xr-x <span style=color:#bd93f9>3</span> root root <span style=color:#bd93f9>4096</span> 10-25 17:44 test2
 
--f does not sort the output files, the -aU option takes effect and the -lst option fails
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># cd test2/  </span>
+<span style=color:#ff79c6>[</span>root@localhost test2<span style=color:#ff79c6>]</span><span style=color:#6272a4># ll</span>
 
--g is similar to -l, but does not list the owner
+Total <span style=color:#bd93f9>4</span>
 
--G, -no-group does not list any information about groups
+drwxr-xr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 10-25 17:44 test22  
+<span style=color:#ff79c6>[</span>root@localhost test2<span style=color:#ff79c6>]</span><span style=color:#6272a4>#  </span>
+</code></pre></div><h4 id=example-3-create-a-directory-with-permission-777>Example 3: Create a directory with permission 777</h4>
+<p>Command.</p>
+<p><code>mkdir -m 777 test3</code></p>
+<p>Output.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># mkdir -m 777 test3  </span>
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># ll</span>
 
--h, -human-readable lists the file size in an easy to understand format (e.g. 1K 234M 2G)
+Total <span style=color:#bd93f9>12</span>
 
--si is similar to -h, but the file size is taken to the power of 1000 instead of 1024
+drwxr-xr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 10-25 17:42 test1  
+drwxr-xr-x <span style=color:#bd93f9>3</span> root root <span style=color:#bd93f9>4096</span> 10-25 17:44 test2  
+drwxrwxrwx <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 10-25 17:46 test3  
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4>#  </span>
+</code></pre></div><p>Note: test3&rsquo;s permissions are rwxrwxrwx</p>
+<h4 id=example-4-create-a-new-directory-and-display-the-information>Example 4: Create a new directory and display the information</h4>
+<p>Command.</p>
+<p><code>mkdir -v test4</code></p>
+<p>Output.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># mkdir -v test4  </span>
+mkdir: created directory <span style=color:#f1fa8c>&#34;test4&#34;</span>
 
--H, -dereference-command-line Use the real destination indicated by the symbolic link in the command line
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># mkdir -vp test5/test5-1  </span>
+mkdir: directory <span style=color:#f1fa8c>&#34;test5&#34;</span> created  
+mkdir: directory <span style=color:#f1fa8c>&#34;test5/test5-1&#34;</span> created
 
--indicator-style=style Specify that each item name is followed by the indicator &lt;style&gt;: none (default), classify (-F), file-type (-p)
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4>#</span>
 
--i, -inode prints out the inode number of each file
+</code></pre></div><h4 id=example-5-a-command-to-create-the-directory-structure-of-a-project>Example 5: A command to create the directory structure of a project</h4>
+<p>Reference: <a href=http://www.ibm.com/developerworks/cn/aix/library/au-badunixhabits.html target=_blank rel=noopener>http://www.ibm.com/developerworks/cn/aix/library/au-badunixhabits.html</a></p>
+<p>Command.</p>
+<p><code>mkdir -vp scf/{lib/,bin/,doc/{info,product},logs/{info,product},service/deploy/{info,product}}</code></p>
+<p>Output.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># mkdir -vp scf/{lib/,bin/,doc/{info,product},logs/{info,product},service/deploy/{info,product}}</span>
 
--I, -ignore=style Do not print out any items that match the shell's universal character &lt;style
+mkdir: Created directory <span style=color:#f1fa8c>&#34;scf&#34;</span>  
+mkdir: directory <span style=color:#f1fa8c>&#34;scf/lib&#34;</span> created  
+mkdir: directory <span style=color:#f1fa8c>&#34;scf/bin&#34;</span> created  
+mkdir: directory <span style=color:#f1fa8c>&#34;scf/doc&#34;</span> created
 
--k i.e. -block-size=1K, indicates the size of the file in k bytes.
+mkdir: directory <span style=color:#f1fa8c>&#34;scf/doc/info&#34;</span> created  
+mkdir: directory <span style=color:#f1fa8c>&#34;scf/doc/product&#34;</span> created
 
--l lists the file permissions, owner, file size, and other information in detail, in addition to the file name.
+mkdir: directory <span style=color:#f1fa8c>&#34;scf/logs&#34;</span> created  
+mkdir: directory <span style=color:#f1fa8c>&#34;scf/logs/info&#34;</span> created  
+mkdir: directory <span style=color:#f1fa8c>&#34;scf/logs/product&#34;</span> created
 
--L, -dereference When displaying information about files with symbolic links, display information about the object indicated by the symbolic link instead of the symbolic link itself
+mkdir: directory <span style=color:#f1fa8c>&#34;scf/service&#34;</span> created  
+mkdir: directory <span style=color:#f1fa8c>&#34;scf/service/deploy&#34;</span> created  
+mkdir: directory <span style=color:#f1fa8c>&#34;scf/service/deploy/info&#34;</span> created  
+mkdir: directory <span style=color:#f1fa8c>&#34;scf/service/deploy/product&#34;</span> created
 
--m All items are separated by commas and fill the entire line width
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># tree scf/</span>
 
--o is similar to -l, showing detailed information about the file except for group information.
+scf/  
+|-- lib  
+|-- bin  
+|-- doc  
+|-- info  
+|-- product  
+|-- logs  
+|-- info  
+-- product  
+|-- service  
+|-- deploy  
+|-- info  
+|-- product
 
--r, -reverse in reverse order
+<span style=color:#bd93f9>12</span> directories, <span style=color:#bd93f9>0</span> files
 
--R, -recursive lists all subdirectory levels simultaneously
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4>#</span>
 
--s, -size list all files in block size
-
--S Sort by file size
-
--sort=WORD The following WORDs are available and the corresponding options they represent.
-
-extension -X status -c
-
-none -U time -t
-
-size -S atime -u
-
-time -t access -u
-
-version -v use -u
-
--t Sort by file modification time
-
--u with -lt: Show access time and sort by access time
-
-with -l: show access time but sort by name
-
-otherwise: sort by access time
-
--U no sorting; list items in the original order of the file system
-
--v: Sort by version
-
--w, -width=COLS specify your own screen width instead of using the current value
-
--x list items line by line instead of column by column
-
--X Sort by extension
-
--1 List only one file per line
-
--help Display this help message and leave
-
--version Displays version information and leaves
-</code></pre><h3 id=4-common-examples>4. Common examples</h3>
-<h4 id=example-1>Example 1</h4>
-<p>List the details of all files and directories under the /home/codelinkai folder</p>
-<p><strong>Command: <code>ls -l -R /home/codelinkai</code></strong></p>
-<p>When you use <code>ls</code> command, you should pay attention to the format of the command: after the command prompt, the keyword of the command is first, followed by the command parameters, and there is a short horizontal line &ldquo;-&rdquo; before the command parameters, all the command parameters have specific functions, and you can choose one or more parameters according to your needs.</p>
-<p>In the above command <code>ls -l -R /home/codelinkai</code>, <code>ls</code> is the command keyword, <code>-l -R</code> is the parameter, and <code>/home/codelinkai</code> is the parameter. &ldquo;/home/codelinkai&rdquo; is the object of the command. In this command, two parameters are used, &ldquo;l&rdquo; and &ldquo;R&rdquo;, but you can also use them together as follows.</p>
-<p><strong>Command: <code>ls -lR /home/codelinkai</code></strong></p>
-<p>The result of this form is exactly the same as the above command. In addition, if the operation object of the command is located in the current directory, you can operate on the operation object directly; if it is not in the current directory then you need to give the full path of the operation object, for example, in the above example, my current folder is the codelinkai folder, and I want to operate on the codelinkai file under the home folder, I can directly type <code>ls -lR </code>codelinkai, or I can use <code>ls -lR /home/codelinkai</code>.</p>
-<h4 id=example-2>Example 2</h4>
-<p>To list the details of all the directories starting with &ldquo;t&rdquo; in the current directory, you can use the following command.</p>
-<p><strong>Command: <code>ls -l t*</code></strong></p>
-<p>You can view the information of all the files in the current directory whose file name starts with &ldquo;t&rdquo;. In fact, in the command format, the contents inside the square brackets can be omitted. For the command ls, if you omit the command parameters and operation objects and type &ldquo;ls&rdquo; directly, the contents of the current working directory will be listed.</p>
-<h4 id=example-3>Example 3</h4>
-<p>List only the subdirectories under the file</p>
-<p><strong>Command: <code>ls -F /opt/soft |grep /$</code></strong></p>
-<p>List the subdirectories under the /opt/soft file</p>
-<p>Output:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost opt<span style=color:#ff79c6>]</span><span style=color:#6272a4># ls -F /opt/soft |grep /$</span>
-
-jdk1.6.0_16/
-subversion-1.6.1/
-tomcat6.0.32/
-</code></pre></div><p><strong>Command: <code>ls -l /opt/soft | grep "^d"</code></strong></p>
-<p>List the details of the subdirectories under the /opt/soft file</p>
-<p>Output:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost opt<span style=color:#ff79c6>]</span><span style=color:#6272a4># ls -l /opt/soft | grep &#34;^d&#34;</span>
-
-drwxr-xr-x <span style=color:#bd93f9>10</span> root root <span style=color:#bd93f9>4096</span> 09-17 18:17 jdk1.6.0_16
-drwxr-xr-x <span style=color:#bd93f9>16</span> <span style=color:#bd93f9>1016</span> <span style=color:#bd93f9>1016</span> <span style=color:#bd93f9>4096</span> 10-11 03:25 subversion-1.6.1
-drwxr-xr-x <span style=color:#bd93f9>9</span> root root <span style=color:#bd93f9>4096</span> 2011-11-01 tomcat6.0.32
-</code></pre></div><h4 id=example-4>Example 4</h4>
-<p>List all the files in the current working directory whose names start with s. The newer the file, the later it is, you can use the following command.</p>
-<p><strong>Command: <code>ls -ltr s**</code></strong></p>
-<p>Output:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost opt<span style=color:#ff79c6>]</span><span style=color:#6272a4># ls -ltr s*</span>
-
-src:
-Total <span style=color:#bd93f9>0</span>
-
-script:
-Total <span style=color:#bd93f9>0</span>
-
-soft:
-Total <span style=color:#bd93f9>350644</span>
-
-drwxr-xr-x <span style=color:#bd93f9>9</span> root root <span style=color:#bd93f9>4096</span> 2011-11-01 tomcat6.0.32
--rwxr-xr-x <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>81871260</span> 09-17 18:15 jdk-6u16-linux-x64.bin
-drwxr-xr-x <span style=color:#bd93f9>10</span> root root <span style=color:#bd93f9>4096</span> 09-17 18:17 jdk1.6.0_16
--rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>205831281</span> 09-17 18:33 apache-tomcat-6.0.32.tar.gz
--rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>5457684</span> 09-21 00:23 tomcat6.0.32.tar.gz
--rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>4726179</span> 10-10 11:08 subversion-deps-1.6.1.tar.gz
--rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>7501026</span> 10-10 11:08 subversion-1.6.1.tar.gz
-drwxr-xr-x <span style=color:#bd93f9>16</span> <span style=color:#bd93f9>1016</span> <span style=color:#bd93f9>1016</span> <span style=color:#bd93f9>4096</span> 10-11 03:25 subversion-1.6.1
-</code></pre></div><h4 id=example-5>Example 5</h4>
-<p>List all files and directories in the current working directory; add &ldquo;/&rdquo; after the directory name, and add &ldquo;<em>"</em> after the executable file name</p>
-<p><strong>Command: <code>ls -AF</code></strong></p>
-<p>Output:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost opt<span style=color:#ff79c6>]</span><span style=color:#6272a4># ls -AF</span>
-log/ script/ soft/ src/ svndata/ web/
-</code></pre></div><h4 id=example-6>Example 6</h4>
-<p>Calculate the number of files and directories in the current directory</p>
-<p>Command:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>ls -l * |grep <span style=color:#f1fa8c>&#34;^-&#34;</span>|wc -l -number of files
-ls -l * |grep <span style=color:#f1fa8c>&#34;^d&#34;</span>|wc -l -number of directories
-</code></pre></div><h4 id=example-7>Example 7</h4>
-<p>List the absolute path of a file in ls</p>
-<p><strong>Command: <code>ls | sed "s:^:pwd/:"</code></strong></p>
-<p>Output:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash> <span style=color:#ff79c6>[</span>root@localhost opt<span style=color:#ff79c6>]</span><span style=color:#6272a4># ls | sed &#34;s:^:`pwd`/:&#34; </span>
-
- /opt/log
- /opt/script
- /opt/soft
- /opt/src
- /opt/svndata
- /opt/web
-</code></pre></div><h4 id=example-8>Example 8</h4>
-<p>List the absolute paths of all files (including hidden files) in the current directory, without recursion for directories</p>
-<p><strong>Command: <code>find $PWD -maxdepth 1 | xargs ls -ld</code></strong></p>
-<p>Output:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost opt<span style=color:#ff79c6>]</span><span style=color:#6272a4># find $PWD -maxdepth 1 | xargs `ls` -ld</span>
-
-drwxr-xr-x <span style=color:#bd93f9>8</span> root root <span style=color:#bd93f9>4096</span> 10-11 03:43 /opt
-drwxr-xr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 2012-03-08 /opt/log
-drwxr-xr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 2012-03-08 /opt/script
-drwxr-xr-x <span style=color:#bd93f9>5</span> root root <span style=color:#bd93f9>4096</span> 10-11 03:21 /opt/soft
-drwxr-xr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 2012-03-08 /opt/src
-drwxr-xr-x <span style=color:#bd93f9>4</span> root root <span style=color:#bd93f9>4096</span> 10-11 05:22 /opt/svndata
-drwxr-xr-x <span style=color:#bd93f9>4</span> root root <span style=color:#bd93f9>4096</span> 10-09 00:45 /opt/web
-</code></pre></div><h4 id=example-9>Example 9</h4>
-<p>Recursively list the absolute paths of all files (including hidden files) in the current directory</p>
-<p><strong>Command: <code>find $PWD | xargs ls -ld</code></strong></p>
-<h4 id=example-10>Example 10</h4>
-<p>Specify the file time output format**</p>
-<p><strong>Command: <code>ls -tl -time-style=full-iso</code></strong></p>
-<p>Output:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost soft<span style=color:#ff79c6>]</span><span style=color:#6272a4># `ls` -tl --time-style=full-iso </span>
-Total <span style=color:#bd93f9>350644</span>
-drwxr-xr-x <span style=color:#bd93f9>16</span> <span style=color:#bd93f9>1016</span> <span style=color:#bd93f9>1016</span> <span style=color:#bd93f9>4096</span> 2012-10-11 03:25:58.000000000 +0800 subversion-1.6.1
-</code></pre></div><p><strong>Command: <code>ls -ctl -time-style=long-iso</code></strong></p>
-<p>Output:</p>
-<pre tabindex=0><code>[root@localhost soft]# `ls` -ctl --time-style=long-iso
-Total 350644
-drwxr-xr-x 16 1016 1016 4096 2012-10-11 03:25 subversion-1.6.1
-</code></pre><h3 id=extensions>Extensions</h3>
-<hr>
-<p>Open <code>/etc/bashrc</code> and add the following line:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#8be9fd;font-style:italic>alias</span> <span style=color:#8be9fd;font-style:italic>ls</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;ls --color&#34;</span>
-</code></pre></div><p>The next time you start bash, you will be able to display a colored list of directories like in Slackware, where the colors mean the following:</p>
-<ul>
-<li>
-<p>blue&ndash;>directories</p>
-</li>
-<li>
-<p>green&ndash;>executable files</p>
-</li>
-<li>
-<p>red&ndash;>compressed files</p>
-</li>
-<li>
-<p>light blue&ndash;>linked files</p>
-</li>
-<li>
-<p>gray&ndash;>other files</p>
-</li>
-</ul>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzI1MTIzMzI2MA==&mid=2650574812&idx=2&sn=e8a1170f52b76284ad02ccffb1dddc6f&chksm=f1fe395fc689b0498697156b937beda073ef7ccbf22c7b15a1cd628ced7a50ea5ec365dc3988&scene=21#wechat_redirect">Source</a></p>
-<hr>
+</code></pre></div><hr>
+<p>Reference</p>
+<p><a href=http://www.cnblogs.com/peida/archive/2012/10/25/2738271.html target=_blank rel=noopener>www.cnblogs.com/peida/archive/2012/10/25/2738271.html</a></p>
 </div>
 <div class=mb-3>
 <h5 class="d-inline-block mr-3">Tags:</h5>
 <ul class="list-inline d-inline-block">
 <li class=list-inline-item><a class=text-color href=https://codelink.ai/tags/learning>learning</a>,</li>
-<li class=list-inline-item><a class=text-color href=https://codelink.ai/tags/linux>linux</a>,</li>
+<li class=list-inline-item><a class=text-color href=https://codelink.ai/tags/linux%20command>linux command</a>,</li>
 </ul>
 </div>
 <a class=resp-sharing-button__link href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fcodelink.ai%2fblog%2fdevops%2fa-linux-command-a-day-1-ls-command%2f" target=_blank rel=noopener aria-label>
@@ -514,6 +410,7 @@ drwxr-xr-x 16 1016 1016 4096 2012-10-11 03:25 subversion-1.6.1
 <li class=list-inline-item><a class=hover-ripple href=https://codelink.ai/tags/learn>Learn</a></li>
 <li class=list-inline-item><a class=hover-ripple href=https://codelink.ai/tags/learning>Learning</a></li>
 <li class=list-inline-item><a class=hover-ripple href=https://codelink.ai/tags/linux>Linux</a></li>
+<li class=list-inline-item><a class=hover-ripple href=https://codelink.ai/tags/linux-command>Linux command</a></li>
 <li class=list-inline-item><a class=hover-ripple href=https://codelink.ai/tags/multi-threading>Multi threading</a></li>
 <li class=list-inline-item><a class=hover-ripple href=https://codelink.ai/tags/nginx>Nginx</a></li>
 <li class=list-inline-item><a class=hover-ripple href=https://codelink.ai/tags/python>Python</a></li>
@@ -575,7 +472,7 @@ drwxr-xr-x 16 1016 1016 4096 2012-10-11 03:25 subversion-1.6.1
 <h4 class="text-white mb-4">Contact Info</h4>
 <ul class=list-unstyled>
 <li class="text-light mb-3">+1-832-303-0728</li>
-<li class="text-light mb-3">info@codelink.ai</li>
+<li class="text-light mb-3">codelink.ai@gmail.com</li>
 <li class="text-light mb-3">USA, China, Indonesia</li>
 </ul>
 </div>
