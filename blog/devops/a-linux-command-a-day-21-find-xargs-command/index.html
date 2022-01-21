@@ -1,21 +1,29 @@
 <!doctype html><html lang=en-us>
 <head>
 <meta charset=utf-8>
-<title>Learn From CodeLink</title>
+<title>A Linux command a day (21): find -xargs command</title>
 <base href=https://codelink.ai>
 <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=5">
-<meta name=description content="Craft Stunning Web, Mobile And Data Analytics Products">
+<meta name=description content="The `find` command passes the matched files to the `xargs` command, and the `xargs` command fetches some of the files at a time instead of all of them, unlike the `-exec` option. ">
 <meta name=author content="Admin">
 <meta name=generator content="Hugo 0.92.0">
 <link rel=manifest href=https://codelink.ai/index.webmanifest>
 <meta name=msapplication-TileColor content="#18BC9D">
 <meta name=theme-color content="#fff">
-<meta name=twitter:title content="Learn From CodeLink">
-<meta name=twitter:description content="Craft Stunning Web, Mobile And Data Analytics Products">
-<meta property="og:title" content="Learn From CodeLink">
-<meta property="og:description" content="Craft Stunning Web, Mobile And Data Analytics Products">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://codelink.ai/blog/">
+<meta property="og:image" content="https://codelink.ai/images/blog/linux.png">
+<meta name=twitter:image content="https://codelink.ai/images/blog/linux.png">
+<meta name=twitter:card content="summary_large_image">
+<meta property="og:image:width" content="1000">
+<meta property="og:image:height" content="700">
+<meta property="og:image:type" content="image/png">
+<meta name=twitter:title content="A Linux command a day (21): find -xargs command">
+<meta name=twitter:description content="The `find` command passes the matched files to the `xargs` command, and the `xargs` command fetches some of the files at a time instead of all of them, unlike the `-exec` option. ">
+<meta property="og:title" content="A Linux command a day (21): find -xargs command">
+<meta property="og:description" content="The `find` command passes the matched files to the `xargs` command, and the `xargs` command fetches some of the files at a time instead of all of them, unlike the `-exec` option. ">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://codelink.ai/blog/devops/a-linux-command-a-day-21-find-xargs-command/"><meta property="article:section" content="blog">
+<meta property="article:published_time" content="2021-10-03T15:40:24+06:00">
+<meta property="article:modified_time" content="2021-10-03T15:40:24+06:00">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6LQHFY4FG7"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-6LQHFY4FG7',{anonymize_ip:!1})}</script>
 <link rel="shortcut icon" href=https://codelink.ai/images/favicon.ico type=image/x-icon>
@@ -135,11 +143,11 @@ Blog
 <div class=container>
 <div class=row>
 <div class=col-12>
-<h2 class="text-white mb-3">Learn From CodeLink</h2>
+<h2 class="text-white mb-3">A Linux command a day (21): find -xargs command</h2>
 <nav aria-label=breadcrumb>
 <ol class="breadcrumb bg-transparent p-0">
 <li class="breadcrumb-item font-weight-semebold"><a class=text-white href=https://codelink.ai/>Home</a></li>
-<li class="breadcrumb-item font-weight-semebold active text-primary" aria-current=page>Learn From CodeLink</li>
+<li class="breadcrumb-item font-weight-semebold active text-primary" aria-current=page>A Linux command a day (21): find -xargs command</li>
 </ol>
 </nav>
 </div>
@@ -149,189 +157,327 @@ Blog
 <section class=section>
 <div class=container>
 <div class=row>
-<div class="col-lg-8 order-2 order-lg-1">
-<div class=row>
-<article class="col-md-6 mb-4">
-<div class="card border-0 rounded-0 position-relative box-shadow">
-<div class=card-type>Data Science</div>
-<img loading=lazy class="card-img-top rounded-0" src=https://codelink.ai/images/blog/keplergl.png onerror="this.onerror=null,this.src='https://codelink.ai/images/blog/keplergl.png'" alt="Spatial data visualization wizard keplergl">
-<div class=card-body>
-<div class="card-meta text-uppercase mb-2">by <strong class=text-dark>Admin</strong>/ on
-<strong class=text-dark>02 Jan 2022</strong></div>
-<h4 class=card-title><a class=text-dark href=https://codelink.ai/blog/data-science/spatial-data-visualization-wizard-keplergl/ aria-label="Spatial data visualization wizard keplergl">Spatial data visualization wizard keplergl</a></h4>
-<div class=section-title-border></div>
-<p class=card-text>We&rsquo;d like to introduce you to an awesome spatial (geographic) data visualization tool: keplergl.</p>
-</div>
-</div>
-</article>
-<article class="col-md-6 mb-4">
-<div class="card border-0 rounded-0 position-relative box-shadow">
-<div class=card-type>Web Development</div>
-<img loading=lazy class="card-img-top rounded-0" src=https://codelink.ai/images/blog/post-2.webp onerror="this.onerror=null,this.src='https://codelink.ai/images/blog/post-2.webp'" alt="A few of this year's super-hot programming sites!">
-<div class=card-body>
-<div class="card-meta text-uppercase mb-2">by <strong class=text-dark>Admin</strong>/ on
-<strong class=text-dark>27 Dec 2021</strong></div>
-<h4 class=card-title><a class=text-dark href=https://codelink.ai/blog/web-development/a-few-of-this-years-super-hot-programming-sites/ aria-label="A few of this year's super-hot programming sites!">A few of this year's super-hot programming sites!</a></h4>
-<div class=section-title-border></div>
-<p class=card-text>We recommend several popular websites that can help improve your programming efficiency.</p>
-</div>
-</div>
-</article>
-<article class="col-md-6 mb-4">
-<div class="card border-0 rounded-0 position-relative box-shadow">
-<div class=card-type>Data Science</div>
-<img loading=lazy class="card-img-top rounded-0" src=https://codelink.ai/images/blog/post-6.webp onerror="this.onerror=null,this.src='https://codelink.ai/images/blog/post-6.webp'" alt="A 30-minute's guide to XGBoost (Python code)">
-<div class=card-body>
-<div class="card-meta text-uppercase mb-2">by <strong class=text-dark>Admin</strong>/ on
-<strong class=text-dark>22 Nov 2021</strong></div>
-<h4 class=card-title><a class=text-dark href=https://codelink.ai/blog/data-science/a-30-minute-guide-to-xgboost/ aria-label="A 30-minute's guide to XGBoost (Python code)">A 30-minute's guide to XGBoost (Python code)</a></h4>
-<div class=section-title-border></div>
-<p class=card-text>Xgboost is an integrated learning algorithm, which belongs to the category of boosting algorithms in the 3 commonly used integration methods (bagging, boosting, stacking).</p>
-</div>
-</div>
-</article>
-<article class="col-md-6 mb-4">
-<div class="card border-0 rounded-0 position-relative box-shadow">
-<div class=card-type>Data Science</div>
-<img loading=lazy class="card-img-top rounded-0" src=https://codelink.ai/images/blog/post-5.png onerror="this.onerror=null,this.src='https://codelink.ai/images/blog/post-5.png'" alt="KalidoKit: algorithms to achieve, Facemesh, Blazepose, Handpose, Holistic">
-<div class=card-body>
-<div class="card-meta text-uppercase mb-2">by <strong class=text-dark>Admin</strong>/ on
-<strong class=text-dark>22 Nov 2021</strong></div>
-<h4 class=card-title><a class=text-dark href=https://codelink.ai/blog/data-science/algorithm-kalidokit/ aria-label="KalidoKit: algorithms to achieve, Facemesh, Blazepose, Handpose, Holistic">KalidoKit: algorithms to achieve, Facemesh, Blazepose, Handpose, Holistic</a></h4>
-<div class=section-title-border></div>
-<p class=card-text>KalidoKit is the integration of a variety of algorithms to achieve, Facemesh, Blazepose, Handpose, Holistic.</p>
-</div>
-</div>
-</article>
-<article class="col-md-6 mb-4">
-<div class="card border-0 rounded-0 position-relative box-shadow">
-<div class=card-type>Python</div>
-<img loading=lazy class="card-img-top rounded-0" src=https://codelink.ai/images/blog/python.png onerror="this.onerror=null,this.src='https://codelink.ai/images/blog/python.png'" alt="Explaining the 5 Python thread locks">
-<div class=card-body>
-<div class="card-meta text-uppercase mb-2">by <strong class=text-dark>Admin</strong>/ on
-<strong class=text-dark>20 Nov 2021</strong></div>
-<h4 class=card-title><a class=text-dark href=https://codelink.ai/blog/python/explaining-the-5-python-thread-locks/ aria-label="Explaining the 5 Python thread locks">Explaining the 5 Python thread locks</a></h4>
-<div class=section-title-border></div>
-<p class=card-text>This article will focus on the threading module, and for everyday developers, this content is a must-have, and also a high frequency interview FAQ.</p>
-</div>
-</div>
-</article>
-<article class="col-md-6 mb-4">
-<div class="card border-0 rounded-0 position-relative box-shadow">
-<div class=card-type>Python</div>
-<img loading=lazy class="card-img-top rounded-0" src=https://codelink.ai/images/blog/ffmpeg.png onerror="this.onerror=null,this.src='https://codelink.ai/images/blog/ffmpeg.png'" alt="The magic tool ffmpeg -- editing video with extreme comfort">
-<div class=card-body>
-<div class="card-meta text-uppercase mb-2">by <strong class=text-dark>Admin</strong>/ on
-<strong class=text-dark>28 Oct 2021</strong></div>
-<h4 class=card-title><a class=text-dark href=https://codelink.ai/blog/python/the-magic-tool-ffmpeg-operating-video-with-extreme-comfort/ aria-label="The magic tool ffmpeg -- editing video with extreme comfort">The magic tool ffmpeg -- editing video with extreme comfort</a></h4>
-<div class=section-title-border></div>
-<p class=card-text>I recently got a new task: I need to split a video of an event into smaller segments of two minutes or less for posting on a short video platform.</p>
-</div>
-</div>
-</article>
-<article class="col-md-6 mb-4">
-<div class="card border-0 rounded-0 position-relative box-shadow">
-<div class=card-type>Python</div>
-<img loading=lazy class="card-img-top rounded-0" src=https://codelink.ai/images/blog/python.png onerror="this.onerror=null,this.src='https://codelink.ai/images/blog/python.png'" alt="There are 3 incredible return functions in Python">
-<div class=card-body>
-<div class="card-meta text-uppercase mb-2">by <strong class=text-dark>Admin</strong>/ on
-<strong class=text-dark>19 Oct 2021</strong></div>
-<h4 class=card-title><a class=text-dark href=https://codelink.ai/blog/python/there-are-3-incredible-return-functions-in-python/ aria-label="There are 3 incredible return functions in Python">There are 3 incredible return functions in Python</a></h4>
-<div class=section-title-border></div>
-<p class=card-text>Today we share with you 3 relatively cold knowledge.</p>
-</div>
-</div>
-</article>
-<article class="col-md-6 mb-4">
-<div class="card border-0 rounded-0 position-relative box-shadow">
-<div class=card-type>Web Development</div>
-<img loading=lazy class="card-img-top rounded-0" src=https://codelink.ai/images/blog/post-3.webp onerror="this.onerror=null,this.src='https://codelink.ai/images/blog/post-3.webp'" alt="Recommend 10 very 'wow' Web 'resources' to the front-end developers">
-<div class=card-body>
-<div class="card-meta text-uppercase mb-2">by <strong class=text-dark>Admin</strong>/ on
-<strong class=text-dark>17 Oct 2021</strong></div>
-<h4 class=card-title><a class=text-dark href=https://codelink.ai/blog/web-development/recommend-10-very-wow-web-resources-to-the-front-end-developers/ aria-label="Recommend 10 very 'wow' Web 'resources' to the front-end developers">Recommend 10 very 'wow' Web 'resources' to the front-end developers</a></h4>
-<div class=section-title-border></div>
-<p class=card-text>There is no doubt: making good use of online resources and tools can speed up development, improve quality, and make life more Chill 😎~.</p>
-</div>
-</div>
-</article>
-<article class="col-md-6 mb-4">
-<div class="card border-0 rounded-0 position-relative box-shadow">
+<div class=col-lg-8>
+<div class="position-relative mb-5">
+<img loading=lazy src=https://codelink.ai/images/blog/linux.png onerror="this.onerror=null,this.src='https://codelink.ai/images/blog/linux.png'" alt="post thumb" class="img-fluid w-100">
 <div class=card-type>Devops</div>
-<img loading=lazy class="card-img-top rounded-0" src=https://codelink.ai/images/blog/linux.png onerror="this.onerror=null,this.src='https://codelink.ai/images/blog/linux.png'" alt="A Linux command a day (22): find command detailed">
-<div class=card-body>
-<div class="card-meta text-uppercase mb-2">by <strong class=text-dark>Admin</strong>/ on
-<strong class=text-dark>04 Oct 2021</strong></div>
-<h4 class=card-title><a class=text-dark href=https://codelink.ai/blog/devops/a-linux-command-a-day-22-find-detailed/ aria-label="A Linux command a day (22): find command detailed">A Linux command a day (22): find command detailed</a></h4>
-<div class=section-title-border></div>
-<p class=card-text>find Some common examples of some common parameters and some specific uses and considerations.</p>
+</div>
+<a class=resp-sharing-button__link href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fcodelink.ai%2fblog%2fdevops%2fa-linux-command-a-day-21-find-xargs-command%2f" target=_blank rel=noopener aria-label>
+<div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/></svg>
 </div>
 </div>
-</article>
-<article class="col-md-6 mb-4">
-<div class="card border-0 rounded-0 position-relative box-shadow">
-<div class=card-type>Devops</div>
-<img loading=lazy class="card-img-top rounded-0" src=https://codelink.ai/images/blog/linux.png onerror="this.onerror=null,this.src='https://codelink.ai/images/blog/linux.png'" alt="A Linux command a day (21): find -xargs command">
-<div class=card-body>
-<div class="card-meta text-uppercase mb-2">by <strong class=text-dark>Admin</strong>/ on
-<strong class=text-dark>03 Oct 2021</strong></div>
-<h4 class=card-title><a class=text-dark href=https://codelink.ai/blog/devops/a-linux-command-a-day-21-find-xargs-command/ aria-label="A Linux command a day (21): find -xargs command">A Linux command a day (21): find -xargs command</a></h4>
-<div class=section-title-border></div>
-<p class=card-text>When using the -find command with the -exec option to process matched files, the -find command passes all the matched files together to exec for execution.</p>
+</a>
+<a class=resp-sharing-button__link href="https://twitter.com/intent/tweet/?text=CodeLink%20Consulting%20%7C%20Craft%20Stunning%20Web%2C%20Mobile%20And%20Data%20Analytics%20Products&url=https%3a%2f%2fcodelink.ai%2fblog%2fdevops%2fa-linux-command-a-day-21-find-xargs-command%2f" target=_blank rel=noopener aria-label>
+<div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5.0-4.55 2.04-4.55 4.54.0.36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3.0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35.0 12.92-6.92 12.92-12.93.0-.2.0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z"/></svg>
 </div>
 </div>
-</article>
-<div class="col-12 mt-5">
-<nav aria-label="Page navigation">
-<ul class="pagination justify-content-center">
-<li class=page-item>
-<a class="page-link hover-ripple" href=https://codelink.ai/blog/>
-««
 </a>
-</li>
-<li class=page-item>
-<a href=https://codelink.ai/blog/ class="page-link hover-ripple">
-«
+<a class=resp-sharing-button__link href="mailto:?subject=CodeLink%20Consulting%20%7C%20Craft%20Stunning%20Web%2C%20Mobile%20And%20Data%20Analytics%20Products&body=https%3a%2f%2fcodelink.ai%2fblog%2fdevops%2fa-linux-command-a-day-21-find-xargs-command%2f" target=_self rel=noopener aria-label>
+<div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 4H2C.9 4 0 4.9.0 6v12c0 1.1.9 2 2 2h20c1.1.0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17.0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1.0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08.0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/></svg>
+</div>
+</div>
 </a>
-</li>
-<li class=page-item>
-<a href=https://codelink.ai/blog/ class="page-link hover-ripple">
-1
+<a class=resp-sharing-button__link href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fcodelink.ai%2fblog%2fdevops%2fa-linux-command-a-day-21-find-xargs-command%2f&title=CodeLink%20Consulting%20%7C%20Craft%20Stunning%20Web%2C%20Mobile%20And%20Data%20Analytics%20Products&summary=CodeLink%20Consulting%20%7C%20Craft%20Stunning%20Web%2C%20Mobile%20And%20Data%20Analytics%20Products&source=https%3a%2f%2fcodelink.ai%2fblog%2fdevops%2fa-linux-command-a-day-21-find-xargs-command%2f" target=_blank rel=noopener aria-label>
+<div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6.0 2.5 1 2.6 2.5.0 1.4-1 2.5-2.6 2.5zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z"/></svg>
+</div>
+</div>
 </a>
-</li>
-<li class="page-item page-item active">
-<a href=https://codelink.ai/blog/page/2/ class="page-link hover-ripple">
-2
+<a class=resp-sharing-button__link href="whatsapp://send?text=CodeLink%20Consulting%20%7C%20Craft%20Stunning%20Web%2C%20Mobile%20And%20Data%20Analytics%20Products%20https%3a%2f%2fcodelink.ai%2fblog%2fdevops%2fa-linux-command-a-day-21-find-xargs-command%2f" target=_blank rel=noopener aria-label>
+<div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.1 3.9C17.9 1.7 15 .5 12 .5 5.8.5.7 5.6.7 11.9c0 2 .5 3.9 1.5 5.6L.6 23.4l6-1.6c1.6.9 3.5 1.3 5.4 1.3 6.3.0 11.4-5.1 11.4-11.4-.1-2.8-1.2-5.7-3.3-7.8zM12 21.4c-1.7.0-3.3-.5-4.8-1.3l-.4-.2-3.5 1 1-3.4L4 17c-1-1.5-1.4-3.2-1.4-5.1.0-5.2 4.2-9.4 9.4-9.4 2.5.0 4.9 1 6.7 2.8s2.8 4.2 2.8 6.7c-.1 5.2-4.3 9.4-9.5 9.4zm5.1-7.1c-.3-.1-1.7-.9-1.9-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.5-2.3-1.4c-.9-.8-1.4-1.7-1.6-2s0-.5.1-.6.3-.3.4-.5c.2-.1.3-.3.4-.5s0-.4.0-.5C10 9 9.3 7.6 9 7c-.1-.4-.4-.3-.5-.3h-.6s-.4.1-.7.3c-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.3-.3-.4-.6-.5z"/></svg>
+</div>
+</div>
 </a>
-</li>
-<li class=page-item>
-<a href=https://codelink.ai/blog/page/3/ class="page-link hover-ripple">
-3
-</a>
-</li>
-<li class=page-item>
-<a href=https://codelink.ai/blog/page/4/ class="page-link hover-ripple">
-4
-</a>
-</li>
-<li class=page-item>
-<a href=https://codelink.ai/blog/page/5/ class="page-link hover-ripple">
-5
-</a>
-</li>
-<li class=page-item>
-<a href=https://codelink.ai/blog/page/3/ class="page-link hover-ripple">
-»
-</a>
-</li>
-<li class=page-item>
-<a class="page-link hover-ripple" href=https://codelink.ai/blog/page/7/>
-»»
-</a>
-</li>
+<div class="card-meta text-uppercase mb-2">by <strong class=text-dark>Admin</strong>/ on <strong class=text-dark>03 Oct 2021</strong></div>
+<h2>A Linux command a day (21): find -xargs command</h2>
+<div class=content>
+<hr>
+<p>When using the <code>-find</code> command with the <code>-exec</code> option to process matched files, the <code>-find</code> command passes all the matched files together to <code>exec</code> for execution. However, some systems have a limit on the length of commands that can be passed to <code>exec</code>, so that after a few minutes of running the <code>find</code> command, an overflow error will occur. The error message is usually &ldquo;argument column too long&rdquo; or &ldquo;argument column overflowed&rdquo;. This is where the <code>xargs</code> command comes in handy, especially when used in conjunction with the find command.</p>
+<p>The <code>find</code> command passes the matched files to the <code>xargs</code> command, and the <code>xargs</code> command fetches some of the files at a time instead of all of them, unlike the <code>-exec</code> option. This allows it to process the first batch of files fetched first, then the next, and so on.</p>
+<p>In some systems, using the <code>-exec</code> option launches a process for each matched file, rather than executing all the matched files at once as arguments; this can be inefficient in some cases because of the problem of too many processes and performance degradation, whereas with the <code>xargs</code> command, there is only one process. In addition, when using the <code>xargs</code> command, whether to get all the parameters at once or in batches, and the number of parameters to be fetched at each time will be determined by the options of the command and the corresponding adjustable parameters in the system kernel.</p>
+<h3 id=usage-examples>Usage examples.</h3>
+<h4 id=example-1-find-every-common-file-in-the-system-and-use-the-xargs-command-to-test-what-kind-of-file-they-belong-to>Example 1: Find every common file in the system and use the xargs command to test what kind of file they belong to</h4>
+<p><strong>Command:</strong></p>
+<p><code>find . -type f -print | xargs file </code></p>
+<p><strong>output:</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># 11</span>
+
+Total <span style=color:#bd93f9>312</span>
+
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>302108</span> 11-03 06:19 log2012.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>0</span> 11-12 22:25 log2013.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>0</span> 11-12 22:25 log2014.log  
+drwxr-xr-x <span style=color:#bd93f9>6</span> root root <span style=color:#bd93f9>4096</span> 10-27 01:58 scf  
+drwxrwxrwx <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-12 19:32 test3  
+drwxrwxrwx <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-12 19:32 test4
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># find . -type f -print | xargs file</span>
+
+. /log2014.log: empty  
+. /log2013.log: empty  
+. /log2012.log: ASCII text  
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4>#</span>
+
+</code></pre></div><h4 id=example-2-find-the-memory-information-dump-file-core-dump-in-the-whole-system-and-save-the-result-to-tmpcorelog-file>Example 2: Find the memory information dump file (core dump) in the whole system and save the result to /tmp/core.log file</h4>
+<p><strong>Commands:</strong></p>
+<p><code>find / -name "core" -print | xargs echo "" >/tmp/core.log </code></p>
+<h4 id=output>Output.</h4>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># find / -name &#34;core&#34; -print | xargs echo &#34;&#34; &gt;/tmp/core.log</span>
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># cd /tmp</span>
+
+<span style=color:#ff79c6>[</span>root@localhost tmp<span style=color:#ff79c6>]</span><span style=color:#6272a4># 11</span>
+
+Total <span style=color:#bd93f9>16</span>
+
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>1524</span> 11-12 22:29 core.log  
+drwx------ <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-12 22:24 ssh-TzcZDx1766  
+drwx------ <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-12 22:28 ssh-ykiRPk1815  
+drwx------ <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-03 07:11 vmware-root
+
+</code></pre></div><h4 id=example-3-find-all-files-in-the-current-directory-for-which-the-user-has-read-write-and-execute-permissions-and-retrieve-the-corresponding-write-permissions>Example 3: Find all files in the current directory for which the user has read, write, and execute permissions, and retrieve the corresponding write permissions</h4>
+<p><strong>Command:</strong></p>
+<p><code>find . -perm -7 -print | xargs chmod o-w </code></p>
+<p><strong>output:</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># 11</span>
+
+Total <span style=color:#bd93f9>312</span>
+
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>302108</span> 11-03 06:19 log2012.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>0</span> 11-12 22:25 log2013.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>0</span> 11-12 22:25 log2014.log  
+drwxr-xr-x <span style=color:#bd93f9>6</span> root root <span style=color:#bd93f9>4096</span> 10-27 01:58 scf  
+drwxrwxrwx <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-12 19:32 test3  
+drwxrwxrwx <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-12 19:32 test4
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># find . -perm -7 -print | xargs chmod o-w</span>
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># 11</span>
+
+Total <span style=color:#bd93f9>312</span>
+
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>302108</span> 11-03 06:19 log2012.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>0</span> 11-12 22:25 log2013.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>0</span> 11-12 22:25 log2014.log  
+drwxr-xr-x <span style=color:#bd93f9>6</span> root root <span style=color:#bd93f9>4096</span> 10-27 01:58 scf  
+drwxrwxr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-12 19:32 test3  
+drwxrwxr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-12 19:32 test4
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4>#</span>
+
+</code></pre></div><p><strong>Description:</strong></p>
+<p>After executing the command, the permissions of the folders scf, test3 and test4 are changed</p>
+<h4 id=example-4-use-grep-command-to-search-for-the-word-hostname-in-all-common-files>Example 4: Use grep command to search for the word hostname in all common files</h4>
+<p><strong>Command:</strong></p>
+<p><code>find . -type f -print | xargs grep "hostname" </code></p>
+<p><strong>output:</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># find . -type f -print | xargs grep &#34;hostname&#34;</span>
+
+. /log2013.log:hostnamebaidu<span style=color:#ff79c6>=</span>baidu.com  
+. /log2013.log:hostnamesina<span style=color:#ff79c6>=</span>sina.com  
+. /log2013.log:hostnames<span style=color:#ff79c6>=</span><span style=color:#8be9fd;font-style:italic>true</span>
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4>#</span>
+
+</code></pre></div><h4 id=example-5-search-for-the-word-hostnames-in-all-common-files-in-the-current-directory-with-the-grep-command>Example 5: Search for the word hostnames in all common files in the current directory with the grep command</h4>
+<p><strong>Command</strong>.</p>
+<p><code>find . -name \* -type f -print | xargs grep "hostnames" </code></p>
+<p><strong>output:</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@peida test<span style=color:#ff79c6>]</span><span style=color:#6272a4># find . -name \* -type f -print | xargs grep &#34;hostnames&#34;</span>
+
+. /log2013.log:hostnamesina<span style=color:#ff79c6>=</span>sina.com  
+. /log2013.log:hostnames<span style=color:#ff79c6>=</span><span style=color:#8be9fd;font-style:italic>true</span>
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4>#</span>
+
+</code></pre></div><p><strong>Description:</strong></p>
+<p>Note that in the above example, \ is used to cancel the special meaning of * in the find command in the shell.</p>
+<h4 id=example-6-using-xargs-to-execute-the-mv>Example 6: Using xargs to execute the mv</h4>
+<p><strong>Command:</strong></p>
+<p><code>find . -name "*.log" | xargs -i mv {} test4 </code></p>
+<p>** Output:**</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># 11</span>
+
+Total <span style=color:#bd93f9>316</span>
+
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>302108</span> 11-03 06:19 log2012.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>61</span> 11-12 22:44 log2013.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>0</span> 11-12 22:25 log2014.log  
+drwxr-xr-x <span style=color:#bd93f9>6</span> root root <span style=color:#bd93f9>4096</span> 10-27 01:58 scf  
+drwxrwxr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-12 22:54 test3  
+drwxrwxr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-12 19:32 test4
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># cd test4/</span>
+
+<span style=color:#ff79c6>[</span>root@localhost test4<span style=color:#ff79c6>]</span><span style=color:#6272a4># 11</span>
+
+Total <span style=color:#bd93f9>0</span> <span style=color:#ff79c6>[</span>root@localhost test4<span style=color:#ff79c6>]</span><span style=color:#6272a4># cd .</span>
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># find . -name &#34;*.log&#34; | xargs -i mv {} test4</span>
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># 11</span>
+
+Total <span style=color:#bd93f9>12</span>
+
+drwxr-xr-x <span style=color:#bd93f9>6</span> root root <span style=color:#bd93f9>4096</span> 10-27 01:58 scf  
+drwxrwxr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-13 05:50 test3  
+drwxrwxr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-13 05:50 test4
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># cd test4/</span>
+
+<span style=color:#ff79c6>[</span>root@localhost test4<span style=color:#ff79c6>]</span><span style=color:#6272a4># 11</span>
+
+Total <span style=color:#bd93f9>304</span>
+
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>302108</span> 11-12 22:54 log2012.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>61</span> 11-12 22:54 log2013.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>0</span> 11-12 22:54 log2014.log
+
+<span style=color:#ff79c6>[</span>root@localhost test4<span style=color:#ff79c6>]</span><span style=color:#6272a4>#</span>
+
+</code></pre></div><h4 id=example-7-execution-of-xargs-after-find-prompts-xargs-argument-line-too-long-solution>Example 7: execution of xargs after find prompts xargs: argument line too long Solution.</h4>
+<p><strong>Command:</strong></p>
+<p><code>find . -type f -atime +0 -print0 | xargs -0 -l1 -t rm -f </code></p>
+<p><strong>output:</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@pd test4<span style=color:#ff79c6>]</span><span style=color:#6272a4># find . -type f -atime +0 -print0 | xargs -0 -l1 -t rm -f</span>
+
+rm -f 
+
+<span style=color:#ff79c6>[</span>root@pdtest4<span style=color:#ff79c6>]</span><span style=color:#6272a4>#</span>
+
+</code></pre></div><p><strong>Description:</strong></p>
+<p>-11 is processing one at a time; -t is printing out the command before processing</p>
+<h4 id=example-8-use-the--i-parameter-to-replace-the-default-preceding-output-with--the--i-parameter-can-specify-other-replacement-characters-such-as--in-the-example><strong>Example</strong> 8:** Use the -i parameter to replace the default preceding output with {}; the -I parameter can specify other replacement characters, such as []** in the example</h4>
+<p><strong>Command:</strong></p>
+<p><strong>output:</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># 11</span>
+
+Total <span style=color:#bd93f9>12</span>
+
+drwxr-xr-x <span style=color:#bd93f9>6</span> root root <span style=color:#bd93f9>4096</span> 10-27 01:58 scf  
+drwxrwxr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-13 05:50 test3  
+drwxrwxr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-13 05:50 test4
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># cd test4</span>
+
+<span style=color:#ff79c6>[</span>root@localhost test4<span style=color:#ff79c6>]</span><span style=color:#6272a4># find . -name &#34;file&#34; | xargs -I [] cp [] ...</span>
+
+<span style=color:#ff79c6>[</span>root@localhost test4<span style=color:#ff79c6>]</span><span style=color:#6272a4># 11</span>
+
+Total <span style=color:#bd93f9>304</span>
+
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>302108</span> 11-12 22:54 log2012.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>61</span> 11-12 22:54 log2013.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>0</span> 11-12 22:54 log2014.log
+
+<span style=color:#ff79c6>[</span>root@localhost test4<span style=color:#ff79c6>]</span><span style=color:#6272a4># cd .</span>
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># 11</span>
+
+Total <span style=color:#bd93f9>316</span>
+
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>302108</span> 11-13 06:03 log2012.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>61</span> 11-13 06:03 log2013.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>0</span> 11-13 06:03 log2014.log  
+drwxr-xr-x <span style=color:#bd93f9>6</span> root root <span style=color:#bd93f9>4096</span> 10-27 01:58 scf  
+drwxrwxr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-13 05:50 test3  
+drwxrwxr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-13 05:50 test4
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4>#</span>
+
+</code></pre></div><p><strong>Description:</strong></p>
+<p>Use the -i parameter to replace the default preceding output with {}, the -I parameter can specify other replacement characters, such as [] in the example</p>
+<h4 id=example-9-use-of-the--p-argument-to-xargs><strong>Example</strong> 9:** Use of the -p argument to xargs**</h4>
+<p><strong>Commands:</strong></p>
+<p><code>find . -name "*.log" | xargs -p -i mv {} . </code></p>
+<p><strong>Output:</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost test3<span style=color:#ff79c6>]</span><span style=color:#6272a4># 11</span>
+
+Total <span style=color:#bd93f9>0</span>
+
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>0</span> 11-13 06:06 log2015.log
+
+<span style=color:#ff79c6>[</span>root@localhost test3<span style=color:#ff79c6>]</span><span style=color:#6272a4># cd .</span>
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># 11</span>
+
+Total <span style=color:#bd93f9>316</span>
+
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>302108</span> 11-13 06:03 log2012.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>61</span> 11-13 06:03 log2013.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>0</span> 11-13 06:03 log2014.log  
+drwxr-xr-x <span style=color:#bd93f9>6</span> root root <span style=color:#bd93f9>4096</span> 10-27 01:58 scf  
+drwxrwxr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-13 06:06 test3  
+drwxrwxr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-13 05:50 test4
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># cd test3</span>
+
+<span style=color:#ff79c6>[</span>root@localhost test3<span style=color:#ff79c6>]</span><span style=color:#6272a4># find . -name &#34;*.log&#34; | xargs -p -i mv {} .</span>
+
+mv . /log2015.log ... ?.... .y
+
+<span style=color:#ff79c6>[</span>root@localhost test3<span style=color:#ff79c6>]</span><span style=color:#6272a4># 11</span>
+
+Total <span style=color:#bd93f9>0</span>
+
+<span style=color:#ff79c6>[</span>root@localhost test3<span style=color:#ff79c6>]</span><span style=color:#6272a4># cd ...</span>
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># 11</span>
+
+Total <span style=color:#bd93f9>316</span>
+
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>302108</span> 11-13 06:03 log2012.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>61</span> 11-13 06:03 log2013.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>0</span> 11-13 06:03 log2014.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>0</span> 11-13 06:06 log2015.log  
+drwxr-xr-x <span style=color:#bd93f9>6</span> root root <span style=color:#bd93f9>4096</span> 10-27 01:58 scf  
+drwxrwxr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-13 06:08 test3  
+drwxrwxr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-13 05:50 test4
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4>#</span>
+
+</code></pre></div><p><strong>Description:</strong></p>
+<p>The -p argument prompts you to confirm whether to execute the subsequent command, y to execute, n not to execute.</p>
+<hr>
+<p>Reference:</p>
+<p><a href=http://www.cnblogs.com/peida/archive/2012/11/15/2770888.html target=_blank rel=noopener>www.cnblogs.com/peida/archive/2012/11/15/2770888.html</a></p>
+</div>
+<div class=mb-3>
+<h5 class="d-inline-block mr-3">Tags:</h5>
+<ul class="list-inline d-inline-block">
+<li class=list-inline-item><a class=text-color href=https://codelink.ai/tags/learning>learning</a>,</li>
+<li class=list-inline-item><a class=text-color href=https://codelink.ai/tags/linux%20command>linux command</a>,</li>
 </ul>
-</nav>
 </div>
+<a class=resp-sharing-button__link href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fcodelink.ai%2fblog%2fdevops%2fa-linux-command-a-day-21-find-xargs-command%2f" target=_blank rel=noopener aria-label>
+<div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://twitter.com/intent/tweet/?text=CodeLink%20Consulting%20%7C%20Craft%20Stunning%20Web%2C%20Mobile%20And%20Data%20Analytics%20Products&url=https%3a%2f%2fcodelink.ai%2fblog%2fdevops%2fa-linux-command-a-day-21-find-xargs-command%2f" target=_blank rel=noopener aria-label>
+<div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5.0-4.55 2.04-4.55 4.54.0.36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3.0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35.0 12.92-6.92 12.92-12.93.0-.2.0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="mailto:?subject=CodeLink%20Consulting%20%7C%20Craft%20Stunning%20Web%2C%20Mobile%20And%20Data%20Analytics%20Products&body=https%3a%2f%2fcodelink.ai%2fblog%2fdevops%2fa-linux-command-a-day-21-find-xargs-command%2f" target=_self rel=noopener aria-label>
+<div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 4H2C.9 4 0 4.9.0 6v12c0 1.1.9 2 2 2h20c1.1.0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17.0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1.0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08.0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fcodelink.ai%2fblog%2fdevops%2fa-linux-command-a-day-21-find-xargs-command%2f&title=CodeLink%20Consulting%20%7C%20Craft%20Stunning%20Web%2C%20Mobile%20And%20Data%20Analytics%20Products&summary=CodeLink%20Consulting%20%7C%20Craft%20Stunning%20Web%2C%20Mobile%20And%20Data%20Analytics%20Products&source=https%3a%2f%2fcodelink.ai%2fblog%2fdevops%2fa-linux-command-a-day-21-find-xargs-command%2f" target=_blank rel=noopener aria-label>
+<div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6.0 2.5 1 2.6 2.5.0 1.4-1 2.5-2.6 2.5zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="whatsapp://send?text=CodeLink%20Consulting%20%7C%20Craft%20Stunning%20Web%2C%20Mobile%20And%20Data%20Analytics%20Products%20https%3a%2f%2fcodelink.ai%2fblog%2fdevops%2fa-linux-command-a-day-21-find-xargs-command%2f" target=_blank rel=noopener aria-label>
+<div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.1 3.9C17.9 1.7 15 .5 12 .5 5.8.5.7 5.6.7 11.9c0 2 .5 3.9 1.5 5.6L.6 23.4l6-1.6c1.6.9 3.5 1.3 5.4 1.3 6.3.0 11.4-5.1 11.4-11.4-.1-2.8-1.2-5.7-3.3-7.8zM12 21.4c-1.7.0-3.3-.5-4.8-1.3l-.4-.2-3.5 1 1-3.4L4 17c-1-1.5-1.4-3.2-1.4-5.1.0-5.2 4.2-9.4 9.4-9.4 2.5.0 4.9 1 6.7 2.8s2.8 4.2 2.8 6.7c-.1 5.2-4.3 9.4-9.5 9.4zm5.1-7.1c-.3-.1-1.7-.9-1.9-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.5-2.3-1.4c-.9-.8-1.4-1.7-1.6-2s0-.5.1-.6.3-.3.4-.5c.2-.1.3-.3.4-.5s0-.4.0-.5C10 9 9.3 7.6 9 7c-.1-.4-.4-.3-.5-.3h-.6s-.4.1-.7.3c-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.3-.3-.4-.6-.5z"/></svg>
+</div>
+</div>
+</a>
+<div class=mt-5>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//codelinkai.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
 </div>
 </div>
 <aside class="col-lg-4 order-1 order-lg-2">

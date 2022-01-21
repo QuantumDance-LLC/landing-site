@@ -1,21 +1,29 @@
 <!doctype html><html lang=en-us>
 <head>
 <meta charset=utf-8>
-<title>Learn From CodeLink</title>
+<title>A Linux command a day (22): find command detailed</title>
 <base href=https://codelink.ai>
 <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=5">
-<meta name=description content="Craft Stunning Web, Mobile And Data Analytics Products">
+<meta name=description content="`find` Some common examples of some common parameters and some specific uses and considerations.">
 <meta name=author content="Admin">
 <meta name=generator content="Hugo 0.92.0">
 <link rel=manifest href=https://codelink.ai/index.webmanifest>
 <meta name=msapplication-TileColor content="#18BC9D">
 <meta name=theme-color content="#fff">
-<meta name=twitter:title content="Learn From CodeLink">
-<meta name=twitter:description content="Craft Stunning Web, Mobile And Data Analytics Products">
-<meta property="og:title" content="Learn From CodeLink">
-<meta property="og:description" content="Craft Stunning Web, Mobile And Data Analytics Products">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://codelink.ai/blog/">
+<meta property="og:image" content="https://codelink.ai/images/blog/linux.png">
+<meta name=twitter:image content="https://codelink.ai/images/blog/linux.png">
+<meta name=twitter:card content="summary_large_image">
+<meta property="og:image:width" content="1000">
+<meta property="og:image:height" content="700">
+<meta property="og:image:type" content="image/png">
+<meta name=twitter:title content="A Linux command a day (22): find command detailed">
+<meta name=twitter:description content="`find` Some common examples of some common parameters and some specific uses and considerations.">
+<meta property="og:title" content="A Linux command a day (22): find command detailed">
+<meta property="og:description" content="`find` Some common examples of some common parameters and some specific uses and considerations.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://codelink.ai/blog/devops/a-linux-command-a-day-22-find-detailed/"><meta property="article:section" content="blog">
+<meta property="article:published_time" content="2021-10-04T15:40:24+06:00">
+<meta property="article:modified_time" content="2021-10-04T15:40:24+06:00">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6LQHFY4FG7"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-6LQHFY4FG7',{anonymize_ip:!1})}</script>
 <link rel="shortcut icon" href=https://codelink.ai/images/favicon.ico type=image/x-icon>
@@ -135,11 +143,11 @@ Blog
 <div class=container>
 <div class=row>
 <div class=col-12>
-<h2 class="text-white mb-3">Learn From CodeLink</h2>
+<h2 class="text-white mb-3">A Linux command a day (22): find command detailed</h2>
 <nav aria-label=breadcrumb>
 <ol class="breadcrumb bg-transparent p-0">
 <li class="breadcrumb-item font-weight-semebold"><a class=text-white href=https://codelink.ai/>Home</a></li>
-<li class="breadcrumb-item font-weight-semebold active text-primary" aria-current=page>Learn From CodeLink</li>
+<li class="breadcrumb-item font-weight-semebold active text-primary" aria-current=page>A Linux command a day (22): find command detailed</li>
 </ol>
 </nav>
 </div>
@@ -149,189 +157,402 @@ Blog
 <section class=section>
 <div class=container>
 <div class=row>
-<div class="col-lg-8 order-2 order-lg-1">
-<div class=row>
-<article class="col-md-6 mb-4">
-<div class="card border-0 rounded-0 position-relative box-shadow">
-<div class=card-type>Data Science</div>
-<img loading=lazy class="card-img-top rounded-0" src=https://codelink.ai/images/blog/keplergl.png onerror="this.onerror=null,this.src='https://codelink.ai/images/blog/keplergl.png'" alt="Spatial data visualization wizard keplergl">
-<div class=card-body>
-<div class="card-meta text-uppercase mb-2">by <strong class=text-dark>Admin</strong>/ on
-<strong class=text-dark>02 Jan 2022</strong></div>
-<h4 class=card-title><a class=text-dark href=https://codelink.ai/blog/data-science/spatial-data-visualization-wizard-keplergl/ aria-label="Spatial data visualization wizard keplergl">Spatial data visualization wizard keplergl</a></h4>
-<div class=section-title-border></div>
-<p class=card-text>We&rsquo;d like to introduce you to an awesome spatial (geographic) data visualization tool: keplergl.</p>
-</div>
-</div>
-</article>
-<article class="col-md-6 mb-4">
-<div class="card border-0 rounded-0 position-relative box-shadow">
-<div class=card-type>Web Development</div>
-<img loading=lazy class="card-img-top rounded-0" src=https://codelink.ai/images/blog/post-2.webp onerror="this.onerror=null,this.src='https://codelink.ai/images/blog/post-2.webp'" alt="A few of this year's super-hot programming sites!">
-<div class=card-body>
-<div class="card-meta text-uppercase mb-2">by <strong class=text-dark>Admin</strong>/ on
-<strong class=text-dark>27 Dec 2021</strong></div>
-<h4 class=card-title><a class=text-dark href=https://codelink.ai/blog/web-development/a-few-of-this-years-super-hot-programming-sites/ aria-label="A few of this year's super-hot programming sites!">A few of this year's super-hot programming sites!</a></h4>
-<div class=section-title-border></div>
-<p class=card-text>We recommend several popular websites that can help improve your programming efficiency.</p>
-</div>
-</div>
-</article>
-<article class="col-md-6 mb-4">
-<div class="card border-0 rounded-0 position-relative box-shadow">
-<div class=card-type>Data Science</div>
-<img loading=lazy class="card-img-top rounded-0" src=https://codelink.ai/images/blog/post-6.webp onerror="this.onerror=null,this.src='https://codelink.ai/images/blog/post-6.webp'" alt="A 30-minute's guide to XGBoost (Python code)">
-<div class=card-body>
-<div class="card-meta text-uppercase mb-2">by <strong class=text-dark>Admin</strong>/ on
-<strong class=text-dark>22 Nov 2021</strong></div>
-<h4 class=card-title><a class=text-dark href=https://codelink.ai/blog/data-science/a-30-minute-guide-to-xgboost/ aria-label="A 30-minute's guide to XGBoost (Python code)">A 30-minute's guide to XGBoost (Python code)</a></h4>
-<div class=section-title-border></div>
-<p class=card-text>Xgboost is an integrated learning algorithm, which belongs to the category of boosting algorithms in the 3 commonly used integration methods (bagging, boosting, stacking).</p>
-</div>
-</div>
-</article>
-<article class="col-md-6 mb-4">
-<div class="card border-0 rounded-0 position-relative box-shadow">
-<div class=card-type>Data Science</div>
-<img loading=lazy class="card-img-top rounded-0" src=https://codelink.ai/images/blog/post-5.png onerror="this.onerror=null,this.src='https://codelink.ai/images/blog/post-5.png'" alt="KalidoKit: algorithms to achieve, Facemesh, Blazepose, Handpose, Holistic">
-<div class=card-body>
-<div class="card-meta text-uppercase mb-2">by <strong class=text-dark>Admin</strong>/ on
-<strong class=text-dark>22 Nov 2021</strong></div>
-<h4 class=card-title><a class=text-dark href=https://codelink.ai/blog/data-science/algorithm-kalidokit/ aria-label="KalidoKit: algorithms to achieve, Facemesh, Blazepose, Handpose, Holistic">KalidoKit: algorithms to achieve, Facemesh, Blazepose, Handpose, Holistic</a></h4>
-<div class=section-title-border></div>
-<p class=card-text>KalidoKit is the integration of a variety of algorithms to achieve, Facemesh, Blazepose, Handpose, Holistic.</p>
-</div>
-</div>
-</article>
-<article class="col-md-6 mb-4">
-<div class="card border-0 rounded-0 position-relative box-shadow">
-<div class=card-type>Python</div>
-<img loading=lazy class="card-img-top rounded-0" src=https://codelink.ai/images/blog/python.png onerror="this.onerror=null,this.src='https://codelink.ai/images/blog/python.png'" alt="Explaining the 5 Python thread locks">
-<div class=card-body>
-<div class="card-meta text-uppercase mb-2">by <strong class=text-dark>Admin</strong>/ on
-<strong class=text-dark>20 Nov 2021</strong></div>
-<h4 class=card-title><a class=text-dark href=https://codelink.ai/blog/python/explaining-the-5-python-thread-locks/ aria-label="Explaining the 5 Python thread locks">Explaining the 5 Python thread locks</a></h4>
-<div class=section-title-border></div>
-<p class=card-text>This article will focus on the threading module, and for everyday developers, this content is a must-have, and also a high frequency interview FAQ.</p>
-</div>
-</div>
-</article>
-<article class="col-md-6 mb-4">
-<div class="card border-0 rounded-0 position-relative box-shadow">
-<div class=card-type>Python</div>
-<img loading=lazy class="card-img-top rounded-0" src=https://codelink.ai/images/blog/ffmpeg.png onerror="this.onerror=null,this.src='https://codelink.ai/images/blog/ffmpeg.png'" alt="The magic tool ffmpeg -- editing video with extreme comfort">
-<div class=card-body>
-<div class="card-meta text-uppercase mb-2">by <strong class=text-dark>Admin</strong>/ on
-<strong class=text-dark>28 Oct 2021</strong></div>
-<h4 class=card-title><a class=text-dark href=https://codelink.ai/blog/python/the-magic-tool-ffmpeg-operating-video-with-extreme-comfort/ aria-label="The magic tool ffmpeg -- editing video with extreme comfort">The magic tool ffmpeg -- editing video with extreme comfort</a></h4>
-<div class=section-title-border></div>
-<p class=card-text>I recently got a new task: I need to split a video of an event into smaller segments of two minutes or less for posting on a short video platform.</p>
-</div>
-</div>
-</article>
-<article class="col-md-6 mb-4">
-<div class="card border-0 rounded-0 position-relative box-shadow">
-<div class=card-type>Python</div>
-<img loading=lazy class="card-img-top rounded-0" src=https://codelink.ai/images/blog/python.png onerror="this.onerror=null,this.src='https://codelink.ai/images/blog/python.png'" alt="There are 3 incredible return functions in Python">
-<div class=card-body>
-<div class="card-meta text-uppercase mb-2">by <strong class=text-dark>Admin</strong>/ on
-<strong class=text-dark>19 Oct 2021</strong></div>
-<h4 class=card-title><a class=text-dark href=https://codelink.ai/blog/python/there-are-3-incredible-return-functions-in-python/ aria-label="There are 3 incredible return functions in Python">There are 3 incredible return functions in Python</a></h4>
-<div class=section-title-border></div>
-<p class=card-text>Today we share with you 3 relatively cold knowledge.</p>
-</div>
-</div>
-</article>
-<article class="col-md-6 mb-4">
-<div class="card border-0 rounded-0 position-relative box-shadow">
-<div class=card-type>Web Development</div>
-<img loading=lazy class="card-img-top rounded-0" src=https://codelink.ai/images/blog/post-3.webp onerror="this.onerror=null,this.src='https://codelink.ai/images/blog/post-3.webp'" alt="Recommend 10 very 'wow' Web 'resources' to the front-end developers">
-<div class=card-body>
-<div class="card-meta text-uppercase mb-2">by <strong class=text-dark>Admin</strong>/ on
-<strong class=text-dark>17 Oct 2021</strong></div>
-<h4 class=card-title><a class=text-dark href=https://codelink.ai/blog/web-development/recommend-10-very-wow-web-resources-to-the-front-end-developers/ aria-label="Recommend 10 very 'wow' Web 'resources' to the front-end developers">Recommend 10 very 'wow' Web 'resources' to the front-end developers</a></h4>
-<div class=section-title-border></div>
-<p class=card-text>There is no doubt: making good use of online resources and tools can speed up development, improve quality, and make life more Chill 😎~.</p>
-</div>
-</div>
-</article>
-<article class="col-md-6 mb-4">
-<div class="card border-0 rounded-0 position-relative box-shadow">
+<div class=col-lg-8>
+<div class="position-relative mb-5">
+<img loading=lazy src=https://codelink.ai/images/blog/linux.png onerror="this.onerror=null,this.src='https://codelink.ai/images/blog/linux.png'" alt="post thumb" class="img-fluid w-100">
 <div class=card-type>Devops</div>
-<img loading=lazy class="card-img-top rounded-0" src=https://codelink.ai/images/blog/linux.png onerror="this.onerror=null,this.src='https://codelink.ai/images/blog/linux.png'" alt="A Linux command a day (22): find command detailed">
-<div class=card-body>
-<div class="card-meta text-uppercase mb-2">by <strong class=text-dark>Admin</strong>/ on
-<strong class=text-dark>04 Oct 2021</strong></div>
-<h4 class=card-title><a class=text-dark href=https://codelink.ai/blog/devops/a-linux-command-a-day-22-find-detailed/ aria-label="A Linux command a day (22): find command detailed">A Linux command a day (22): find command detailed</a></h4>
-<div class=section-title-border></div>
-<p class=card-text>find Some common examples of some common parameters and some specific uses and considerations.</p>
+</div>
+<a class=resp-sharing-button__link href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fcodelink.ai%2fblog%2fdevops%2fa-linux-command-a-day-22-find-detailed%2f" target=_blank rel=noopener aria-label>
+<div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/></svg>
 </div>
 </div>
-</article>
-<article class="col-md-6 mb-4">
-<div class="card border-0 rounded-0 position-relative box-shadow">
-<div class=card-type>Devops</div>
-<img loading=lazy class="card-img-top rounded-0" src=https://codelink.ai/images/blog/linux.png onerror="this.onerror=null,this.src='https://codelink.ai/images/blog/linux.png'" alt="A Linux command a day (21): find -xargs command">
-<div class=card-body>
-<div class="card-meta text-uppercase mb-2">by <strong class=text-dark>Admin</strong>/ on
-<strong class=text-dark>03 Oct 2021</strong></div>
-<h4 class=card-title><a class=text-dark href=https://codelink.ai/blog/devops/a-linux-command-a-day-21-find-xargs-command/ aria-label="A Linux command a day (21): find -xargs command">A Linux command a day (21): find -xargs command</a></h4>
-<div class=section-title-border></div>
-<p class=card-text>When using the -find command with the -exec option to process matched files, the -find command passes all the matched files together to exec for execution.</p>
+</a>
+<a class=resp-sharing-button__link href="https://twitter.com/intent/tweet/?text=CodeLink%20Consulting%20%7C%20Craft%20Stunning%20Web%2C%20Mobile%20And%20Data%20Analytics%20Products&url=https%3a%2f%2fcodelink.ai%2fblog%2fdevops%2fa-linux-command-a-day-22-find-detailed%2f" target=_blank rel=noopener aria-label>
+<div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5.0-4.55 2.04-4.55 4.54.0.36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3.0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35.0 12.92-6.92 12.92-12.93.0-.2.0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z"/></svg>
 </div>
 </div>
-</article>
-<div class="col-12 mt-5">
-<nav aria-label="Page navigation">
-<ul class="pagination justify-content-center">
-<li class=page-item>
-<a class="page-link hover-ripple" href=https://codelink.ai/blog/>
-««
 </a>
-</li>
-<li class=page-item>
-<a href=https://codelink.ai/blog/ class="page-link hover-ripple">
-«
+<a class=resp-sharing-button__link href="mailto:?subject=CodeLink%20Consulting%20%7C%20Craft%20Stunning%20Web%2C%20Mobile%20And%20Data%20Analytics%20Products&body=https%3a%2f%2fcodelink.ai%2fblog%2fdevops%2fa-linux-command-a-day-22-find-detailed%2f" target=_self rel=noopener aria-label>
+<div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 4H2C.9 4 0 4.9.0 6v12c0 1.1.9 2 2 2h20c1.1.0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17.0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1.0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08.0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/></svg>
+</div>
+</div>
 </a>
-</li>
-<li class=page-item>
-<a href=https://codelink.ai/blog/ class="page-link hover-ripple">
-1
+<a class=resp-sharing-button__link href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fcodelink.ai%2fblog%2fdevops%2fa-linux-command-a-day-22-find-detailed%2f&title=CodeLink%20Consulting%20%7C%20Craft%20Stunning%20Web%2C%20Mobile%20And%20Data%20Analytics%20Products&summary=CodeLink%20Consulting%20%7C%20Craft%20Stunning%20Web%2C%20Mobile%20And%20Data%20Analytics%20Products&source=https%3a%2f%2fcodelink.ai%2fblog%2fdevops%2fa-linux-command-a-day-22-find-detailed%2f" target=_blank rel=noopener aria-label>
+<div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6.0 2.5 1 2.6 2.5.0 1.4-1 2.5-2.6 2.5zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z"/></svg>
+</div>
+</div>
 </a>
-</li>
-<li class="page-item page-item active">
-<a href=https://codelink.ai/blog/page/2/ class="page-link hover-ripple">
-2
+<a class=resp-sharing-button__link href="whatsapp://send?text=CodeLink%20Consulting%20%7C%20Craft%20Stunning%20Web%2C%20Mobile%20And%20Data%20Analytics%20Products%20https%3a%2f%2fcodelink.ai%2fblog%2fdevops%2fa-linux-command-a-day-22-find-detailed%2f" target=_blank rel=noopener aria-label>
+<div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.1 3.9C17.9 1.7 15 .5 12 .5 5.8.5.7 5.6.7 11.9c0 2 .5 3.9 1.5 5.6L.6 23.4l6-1.6c1.6.9 3.5 1.3 5.4 1.3 6.3.0 11.4-5.1 11.4-11.4-.1-2.8-1.2-5.7-3.3-7.8zM12 21.4c-1.7.0-3.3-.5-4.8-1.3l-.4-.2-3.5 1 1-3.4L4 17c-1-1.5-1.4-3.2-1.4-5.1.0-5.2 4.2-9.4 9.4-9.4 2.5.0 4.9 1 6.7 2.8s2.8 4.2 2.8 6.7c-.1 5.2-4.3 9.4-9.5 9.4zm5.1-7.1c-.3-.1-1.7-.9-1.9-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.5-2.3-1.4c-.9-.8-1.4-1.7-1.6-2s0-.5.1-.6.3-.3.4-.5c.2-.1.3-.3.4-.5s0-.4.0-.5C10 9 9.3 7.6 9 7c-.1-.4-.4-.3-.5-.3h-.6s-.4.1-.7.3c-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.3-.3-.4-.6-.5z"/></svg>
+</div>
+</div>
 </a>
-</li>
-<li class=page-item>
-<a href=https://codelink.ai/blog/page/3/ class="page-link hover-ripple">
-3
-</a>
-</li>
-<li class=page-item>
-<a href=https://codelink.ai/blog/page/4/ class="page-link hover-ripple">
-4
-</a>
-</li>
-<li class=page-item>
-<a href=https://codelink.ai/blog/page/5/ class="page-link hover-ripple">
-5
-</a>
-</li>
-<li class=page-item>
-<a href=https://codelink.ai/blog/page/3/ class="page-link hover-ripple">
-»
-</a>
-</li>
-<li class=page-item>
-<a class="page-link hover-ripple" href=https://codelink.ai/blog/page/7/>
-»»
-</a>
-</li>
+<div class="card-meta text-uppercase mb-2">by <strong class=text-dark>Admin</strong>/ on <strong class=text-dark>04 Oct 2021</strong></div>
+<h2>A Linux command a day (22): find command detailed</h2>
+<div class=content>
+<hr>
+<p><code>find</code> Some common examples of some common parameters and some specific uses and considerations.</p>
+<h3 id=1-using-the-name-option>1. Using the name option.</h3>
+<p>The file name option is the most commonly used option of the find command, either alone or in combination with other options. You can use some kind of filename pattern to match files, remembering to enclose the filename pattern in quotation marks. Whatever the current path is, if you want to be in your own root directory HOME directory.</p>
+<p><code>find ~ -name "*.log" -print</code></p>
+<p>To find all ' *.log' files in the current directory and subdirectories, you can use.</p>
+<p><code>find . -name "*.log" -print</code></p>
+<p>To find files in the current directory and subdirectories whose names begin with an uppercase letter, you can use</p>
+<p><code>find . -name "[A-Z]*" -print</code></p>
+<p>To find files in the /etc directory with names starting with host, you can use.</p>
+<p><code>find /etc -name "host*" -print</code></p>
+<p>To find files in the $HOME directory, you can use.</p>
+<p><code>find ~ -name "*" -print or find . -print</code></p>
+<p>To overload the system, find all files starting from the root directory.</p>
+<p><code>find / -name "*" -print</code></p>
+<p>If you want to find files in the current directory whose names start with a single lowercase letter and end with 4 through 9 plus. log</p>
+<p>Command.</p>
+<p><code>find . -name "[a-z]*[4-9].log" -print </code></p>
+<p>Output.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># ll</span>
+
+Total <span style=color:#bd93f9>316</span>
+
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>302108</span> 11-13 06:03 log2012.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>61</span> 11-13 06:03 log2013.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>0</span> 11-13 06:03 log2014.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>0</span> 11-13 06:06 log2015.log  
+drwxr-xr-x <span style=color:#bd93f9>6</span> root root <span style=color:#bd93f9>4096</span> 10-27 01:58 scf  
+drwxrwxr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-13 06:08 test3  
+drwxrwxr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-13 05:50 test4
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># find . -name &#34;[a-z]*[4-9].log&#34; -print</span>
+
+. /log2014.log  
+. /log2015.log  
+. /test4/log2014.log
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4>#</span>
+
+</code></pre></div><h3 id=2-with-the-perm-option>2. With the perm option.</h3>
+<p>Use the -perm option to find files by file permissions mode. It is better to use octal permissions.</p>
+<p>For example, if you are looking for a file in the current directory with the file permission bit 755, i.e. a file that can be read, written or executed by the owner and read or executed by other users, you can use.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># find . -perm 755 -print</span>
+
+.  
+. /scf  
+. /scf/lib  
+. /scf/service  
+. /scf/service/deploy  
+. /scf/service/deploy/product  
+. /scf/service/deploy/info  
+. /scf/doc  
+. /scf/bin
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4>#</span>
+
+</code></pre></div><p>There is another way to express this: a horizontal bar - should be added in front of the octal numbers to indicate that they all match, e.g. -007 is equivalent to 777, -005 is equivalent to 555,</p>
+<p><strong>Command:</strong></p>
+<p><code>find . -perm -005 </code></p>
+<p><strong>output:</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># 11</span>
+
+Total <span style=color:#bd93f9>316</span>
+
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>302108</span> 11-13 06:03 log2012.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>61</span> 11-13 06:03 log2013.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>0</span> 11-13 06:03 log2014.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>0</span> 11-13 06:06 log2015.log  
+drwxr-xr-x <span style=color:#bd93f9>6</span> root root <span style=color:#bd93f9>4096</span> 10-27 01:58 scf  
+drwxrwxr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-13 06:08 test3  
+drwxrwxr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-13 05:50 test4
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># find . -perm -005</span>
+
+.  
+. /test4  
+. /scf  
+. /scf/lib  
+. /scf/service  
+. /scf/service/deploy  
+. /scf/service/deploy/product  
+. /scf/service/deploy/info  
+. /scf/doc  
+. /scf/bin  
+. /test3
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4>#</span>
+
+</code></pre></div><h3 id=3-ignore-a-directory>3. Ignore a directory.</h3>
+<p>If you want to ignore a directory when looking for a file because you know that it does not contain the file you are looking for, then you can use the -prune option to indicate the directory to ignore. Be careful when using the -prune option, because if you also use the -depth option, then the -prune option will be ignored by the find command. If you wish to find files in the test directory, but not in the test/test3 directory, you can use.</p>
+<p><strong>Command:</strong></p>
+<p><code>find test -path "test/test3" -prune -o -print </code></p>
+<p><strong>output:</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost soft<span style=color:#ff79c6>]</span><span style=color:#6272a4># find test -path &#34;test/test3&#34; -prune -o -print</span>
+
+<span style=color:#8be9fd;font-style:italic>test</span>  
+test/log2014.log  
+test/log2015.log
+
+test/test4  
+test/test4/log2014.log  
+test/test4/log2013.log  
+test/test4/log2012.log
+
+test/scf  
+test/scf/lib  
+test/scf/service  
+test/scf/service/deploy  
+test/scf/service/deploy/product  
+test/scf/service/deploy/info
+
+test/scf/doc  
+test/scf/bin  
+test/log2013.log  
+test/log2012.log
+
+<span style=color:#ff79c6>[</span>root@localhost soft<span style=color:#ff79c6>]</span><span style=color:#6272a4>#</span>
+
+</code></pre></div><h3 id=4-how-to-avoid-a-file-directory-when-using-find-to-find-a-file>4. How to avoid a file directory when using find to find a file.</h3>
+<p><strong>Example 1: Find all files in the test directory that are not in the test4 subdirectory</strong></p>
+<p><strong>Command:</strong></p>
+<p><code>find test -path "test/test4" -prune -o -print </code></p>
+<p><strong>output:</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost soft<span style=color:#ff79c6>]</span><span style=color:#6272a4># find test</span>
+
+<span style=color:#8be9fd;font-style:italic>test</span>  
+test/log2014.log  
+test/log2015.log
+
+test/test4  
+test/test4/log2014.log  
+test/test4/log2013.log  
+test/test4/log2012.log
+
+test/scf  
+test/scf/lib  
+test/scf/service  
+test/scf/service/deploy  
+test/scf/service/deploy/product  
+test/scf/service/deploy/info
+
+test/scf/doc  
+test/scf/bin  
+test/log2013.log  
+test/log2012.log  
+test/test3
+
+<span style=color:#ff79c6>[</span>root@localhost soft<span style=color:#ff79c6>]</span><span style=color:#6272a4># find test -path &#34;test/test4&#34; -prune -o -print</span>
+
+<span style=color:#8be9fd;font-style:italic>test</span>  
+test/log2014.log  
+test/log2015.log
+
+test/scf  
+test/scf/lib  
+test/scf/service  
+test/scf/service/deploy  
+test/scf/service/deploy/product  
+test/scf/service/deploy/info  
+test/scf/doc  
+test/scf/bin  
+test/log2013.log  
+test/log2012.log  
+test/test3
+
+<span style=color:#ff79c6>[</span>root@localhost soft<span style=color:#ff79c6>]</span><span style=color:#6272a4>#</span>
+
+</code></pre></div><p><strong>Description:</strong></p>
+<p>find [-path &mldr; ] [expression]</p>
+<p>Following the list of paths is the expression</p>
+<p>-path &ldquo;test&rdquo; -prune -o -print is a shortened version of -path &ldquo;test&rdquo; -a -prune -o -print which evaluates in order, -a and -o are short-circuited, similar to the shell&rsquo;s && and || if</p>
+<p>-path &ldquo;test&rdquo; is true, then -prune , -prune returns true, and the logical expression is true; otherwise, no -prune, and the logical expression is false. If -path &ldquo;test&rdquo; -a -prune is false, then -print , -print returns true, or the logical expression is true; otherwise, -print is not evaluated, or the logical expression is true.</p>
+<p>This expression combination special case can be written in pseudocode as.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>if</span> -path <span style=color:#f1fa8c>&#34;test&#34;</span> <span style=color:#ff79c6>then</span>   
+  -prune 
+
+<span style=color:#ff79c6>else</span>   
+  -print
+
+</code></pre></div><p><strong>Example 2: Avoiding multiple folders:</strong></p>
+<p><strong>Commands:</strong></p>
+<p><code>find test \( -path test/test4 -o -path test/test3 \) -prune -o -print</code></p>
+<p><strong>Output:</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost soft<span style=color:#ff79c6>]</span><span style=color:#6272a4># find test \( -path test/test4 -o -path test/test3 \) -prune -o -print</span>
+
+<span style=color:#8be9fd;font-style:italic>test</span>  
+test/log2014.log  
+test/log2015.log
+
+test/scf  
+test/scf/lib  
+test/scf/service  
+test/scf/service/deploy  
+test/scf/service/deploy/product  
+test/scf/service/deploy/info  
+test/scf/doc  
+test/scf/bin  
+test/log2013.log  
+test/log2012.log
+
+<span style=color:#ff79c6>[</span>root@localhost soft<span style=color:#ff79c6>]</span><span style=color:#6272a4>#</span>
+
+</code></pre></div><p><strong>Explanation:</strong></p>
+<p>Round brackets indicate the union of expressions. \ indicates a reference, which means that the shell is instructed not to make a special interpretation of the characters that follow, but to leave it to the find command to interpret their meaning.</p>
+<p><strong>Example 3: Find a definite file, with options such as -name followed by -o</strong></p>
+<p><strong>Commands:</strong></p>
+<p><code>find test \(-path test/test4 -o -path test/test3 \) -prune -o -name "*.log" -print </code></p>
+<p>Output.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost soft<span style=color:#ff79c6>]</span><span style=color:#6272a4># find test \( -path test/test4 -o -path test/test3 \) -prune -o -name &#34;*.log&#34; -print</span>
+
+test/log2014.log  
+test/log2015.log  
+test/log2013.log  
+test/log2012.log
+
+<span style=color:#ff79c6>[</span>root@localhost soft<span style=color:#ff79c6>]</span><span style=color:#6272a4>#</span>
+
+</code></pre></div><h3 id=5-using-the-user-and-nouser-options>5. Using the user and nouser options.</h3>
+<p>To find files by file owner.</p>
+<p><strong>Example 1: Find a file in the $HOME directory with peida as the file owner</strong></p>
+<p><strong>Command:</strong></p>
+<p><code>find ~ -user peida -print</code></p>
+<p><strong>Example 2: Find files in the /etc directory with peida as the file owner:</strong></p>
+<p>Command.</p>
+<p><code>find /etc -user peida -print</code></p>
+<p><strong>Description:</strong></p>
+<p>Example 3: To find the files whose owner account has been deleted, you can use the -nouser option. Find all such files in the /home directory</p>
+<p><strong>Command:</strong></p>
+<p><code>find /home -nouser -print </code></p>
+<p><strong>Description:</strong></p>
+<p>This will find files whose owners do not have valid accounts in the /etc/passwd file. When using the -nouser option, it is not necessary to give the user name; the find command will do the work for you.</p>
+<h3 id=6-using-the-group-and-nogroup-options>6. Using the group and nogroup options.</h3>
+<p>Just like the user and nouser options, the find command has the same options for the user group to which a file belongs. To find files belonging to the gem user group in the /apps directory, you can use.</p>
+<p><code>find /apps -group gem -print</code></p>
+<p>To find all files that do not belong to a valid user group, you can use the nogroup option. The following find command looks for such files from the root of the filesystem.</p>
+<p><code>find / -nogroup-print </code></p>
+<h3 id=7-find-files-by-change-time-or-access-time-etc>7. Find files by change time or access time, etc.</h3>
+<p>If you wish to find files by change time, you can use the mtime,atime or ctime options. If the system suddenly runs out of space, there is a good chance that the length of a file has grown rapidly in the meantime, so you can use the mtime option to find such a file.</p>
+<p>Use the minus sign - to qualify files that have changed within n days of today, and the plus sign + to qualify files that have changed before n days of today.</p>
+<p>To find files in the system root directory that have been changed within 5 days, you can use.</p>
+<p><code>find / -mtime -5 -print </code></p>
+<p>To find files in the /var/adm directory that have been changed more than 3 days ago, you can use</p>
+<p><code>find /var/adm -mtime +3 -print </code></p>
+<h3 id=8-find-files-that-are-newer-or-older-than-a-file>8. Find files that are newer or older than a file.</h3>
+<p>If you wish to find all files that have changed at a time newer than one file but older than another, you can use the -newer option.</p>
+<p>Its general form is.</p>
+<p><code>newest_file_name ! oldest_file_name</code></p>
+<p>where ! is a logical non-sign.</p>
+<p><strong>Example 1: Find the file log2012.log newer than the change time but older than the file log2017.log</strong></p>
+<p><strong>Commands:</strong></p>
+<p><code>find -newer log2012.log ! -newer log2017.log </code></p>
+<p><strong>output:</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># 11</span>
+
+Total <span style=color:#bd93f9>316</span>
+
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>302108</span> 11-13 06:03 log2012.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>61</span> 11-13 06:03 log2013.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>0</span> 11-13 06:03 log2014.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>0</span> 11-13 06:06 log2015.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>0</span> 11-16 14:41 log2016.log  
+-rw-r--r-- <span style=color:#bd93f9>1</span> root root <span style=color:#bd93f9>0</span> 11-16 14:43 log2017.log  
+drwxr-xr-x <span style=color:#bd93f9>6</span> root root <span style=color:#bd93f9>4096</span> 10-27 01:58 scf  
+drwxrwxr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-13 06:08 test3  
+drwxrwxr-x <span style=color:#bd93f9>2</span> root root <span style=color:#bd93f9>4096</span> 11-13 05:50 test4
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># find -newer log2012.log ! -newer log2017.log</span>
+
+. /log2015.log  
+. /log2017.log  
+. /log2016.log  
+. /test3
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4>#</span>
+
+</code></pre></div><p><strong>Example 2: Find the file whose change time is newer than ** * * log2012.log * * * ** file</strong></p>
+<p><strong>Commands:</strong></p>
+<p><code>find . -newer **log2012.log** -print </code></p>
+<p><strong>output:</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4># find -newer log2012.log</span>
+
+. /log2015.log  
+. /log2017.log  
+. /log2016.log  
+. /test3
+
+<span style=color:#ff79c6>[</span>root@localhost test<span style=color:#ff79c6>]</span><span style=color:#6272a4>#</span>
+
+</code></pre></div><h3 id=9-using-the-type-option>9. Using the type option.</h3>
+<p><strong>Example 1: Find all directories in the /etc directory</strong></p>
+<h4 id=command>command.</h4>
+<p><code>find /etc -type d -print</code></p>
+<p><strong>Example 2: Find all types of files in the current directory except directories</strong></p>
+<p><strong>Commands:</strong></p>
+<p><code>find . ! -type d -print</code></p>
+<p><strong>Example 3: Find all symbolic link files in the /etc directory</strong></p>
+<p><strong>Command:</strong></p>
+<p><code>find /etc -type l -print </code></p>
+<h3 id=10-use-the-size-option>10. Use the size option.</h3>
+<p>You can find files by their length, which can be measured in either blocks or bytes. The expression for measuring the length of a file in bytes is N c; measuring the length of a file in blocks is simply expressed as a number.</p>
+<p>When searching for files by file length, this file length in bytes is generally used when looking at the size of the file system, because it is then easier to convert using the block measurement.</p>
+<p><strong>Example 1: Find files in the current directory that are greater than 1 M bytes in length</strong></p>
+<p><strong>Commands:</strong></p>
+<p><code>find . -size +1000000c -print </code></p>
+<p><strong>Example 2: Find a file in the /home/apache directory that is exactly 100 bytes long:</strong></p>
+<p><strong>Command:</strong></p>
+<p><code>find /home/apache -size 100c -print</code></p>
+<p><strong>Example 3: Find files in the current directory that are more than 10 blocks long (one block equals 512 bytes)</strong></p>
+<p><strong>Command:</strong></p>
+<p><code>find . -size +10 -print </code></p>
+<h3 id=11-use-the-depth-option>11. Use the depth option.</h3>
+<p>When using the find command, you may want to match all the files first and then look in the subdirectories. Use the depth option to make the find command do this. One reason to do this is that when using the find command to back up a file system on a tape, you want to back up all the files first and the files in the subdirectories second.</p>
+<p>**Example 1: The find command looks for a file named CON.FILE, starting at the root of the file system. **</p>
+<p><strong>Commands:</strong></p>
+<p><code>find / -name "CON.FILE" -depth -print </code></p>
+<h4 id=description>Description.</h4>
+<p>It will first match all the files and then go into the subdirectories to find them</p>
+<h3 id=12-using-the-mount-option>12. Using the mount option.</h3>
+<p>To find files in the current filesystem (without going to other filesystems), you can use the mount option of the find command.</p>
+<p><strong>Example 1: Find files in the current file system with a file name ending in XC, starting from the current directory</strong></p>
+<p><strong>Commands:</strong></p>
+<p><code>find . -name "*.XC" -mount -print</code></p>
+<hr>
+<p>Reference:</p>
+<p><a href=http://www.cnblogs.com/peida/archive/2012/11/16/2773289.html target=_blank rel=noopener>www.cnblogs.com/peida/archive/2012/11/16/2773289.html</a></p>
+</div>
+<div class=mb-3>
+<h5 class="d-inline-block mr-3">Tags:</h5>
+<ul class="list-inline d-inline-block">
+<li class=list-inline-item><a class=text-color href=https://codelink.ai/tags/learning>learning</a>,</li>
+<li class=list-inline-item><a class=text-color href=https://codelink.ai/tags/linux%20command>linux command</a>,</li>
 </ul>
-</nav>
 </div>
+<a class=resp-sharing-button__link href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fcodelink.ai%2fblog%2fdevops%2fa-linux-command-a-day-22-find-detailed%2f" target=_blank rel=noopener aria-label>
+<div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://twitter.com/intent/tweet/?text=CodeLink%20Consulting%20%7C%20Craft%20Stunning%20Web%2C%20Mobile%20And%20Data%20Analytics%20Products&url=https%3a%2f%2fcodelink.ai%2fblog%2fdevops%2fa-linux-command-a-day-22-find-detailed%2f" target=_blank rel=noopener aria-label>
+<div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5.0-4.55 2.04-4.55 4.54.0.36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3.0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35.0 12.92-6.92 12.92-12.93.0-.2.0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="mailto:?subject=CodeLink%20Consulting%20%7C%20Craft%20Stunning%20Web%2C%20Mobile%20And%20Data%20Analytics%20Products&body=https%3a%2f%2fcodelink.ai%2fblog%2fdevops%2fa-linux-command-a-day-22-find-detailed%2f" target=_self rel=noopener aria-label>
+<div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 4H2C.9 4 0 4.9.0 6v12c0 1.1.9 2 2 2h20c1.1.0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17.0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1.0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08.0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fcodelink.ai%2fblog%2fdevops%2fa-linux-command-a-day-22-find-detailed%2f&title=CodeLink%20Consulting%20%7C%20Craft%20Stunning%20Web%2C%20Mobile%20And%20Data%20Analytics%20Products&summary=CodeLink%20Consulting%20%7C%20Craft%20Stunning%20Web%2C%20Mobile%20And%20Data%20Analytics%20Products&source=https%3a%2f%2fcodelink.ai%2fblog%2fdevops%2fa-linux-command-a-day-22-find-detailed%2f" target=_blank rel=noopener aria-label>
+<div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6.0 2.5 1 2.6 2.5.0 1.4-1 2.5-2.6 2.5zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="whatsapp://send?text=CodeLink%20Consulting%20%7C%20Craft%20Stunning%20Web%2C%20Mobile%20And%20Data%20Analytics%20Products%20https%3a%2f%2fcodelink.ai%2fblog%2fdevops%2fa-linux-command-a-day-22-find-detailed%2f" target=_blank rel=noopener aria-label>
+<div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.1 3.9C17.9 1.7 15 .5 12 .5 5.8.5.7 5.6.7 11.9c0 2 .5 3.9 1.5 5.6L.6 23.4l6-1.6c1.6.9 3.5 1.3 5.4 1.3 6.3.0 11.4-5.1 11.4-11.4-.1-2.8-1.2-5.7-3.3-7.8zM12 21.4c-1.7.0-3.3-.5-4.8-1.3l-.4-.2-3.5 1 1-3.4L4 17c-1-1.5-1.4-3.2-1.4-5.1.0-5.2 4.2-9.4 9.4-9.4 2.5.0 4.9 1 6.7 2.8s2.8 4.2 2.8 6.7c-.1 5.2-4.3 9.4-9.5 9.4zm5.1-7.1c-.3-.1-1.7-.9-1.9-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.5-2.3-1.4c-.9-.8-1.4-1.7-1.6-2s0-.5.1-.6.3-.3.4-.5c.2-.1.3-.3.4-.5s0-.4.0-.5C10 9 9.3 7.6 9 7c-.1-.4-.4-.3-.5-.3h-.6s-.4.1-.7.3c-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.3-.3-.4-.6-.5z"/></svg>
+</div>
+</div>
+</a>
+<div class=mt-5>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//codelinkai.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
 </div>
 </div>
 <aside class="col-lg-4 order-1 order-lg-2">
