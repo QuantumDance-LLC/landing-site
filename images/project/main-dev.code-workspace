@@ -54,6 +54,15 @@
 		},
 		{
 			"path": "../../../../../microstudio"
+		},
+		{
+			"path": "../../../../../fastapi-templates"
+		},
+		{
+			"path": "../../../../../django-templates"
+		},
+		{
+			"path": "../../../../../monitools"
 		}
 	],
 	"settings": {}
