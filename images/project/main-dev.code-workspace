@@ -62,7 +62,37 @@
 			"path": "../../../../../django-templates"
 		},
 		{
-			"path": "../../../../../monitools"
+			"path": "../../../../../monitools-django-src"
+		},
+		{
+			"path": "../../../../../monitools-php"
+		},
+		{
+			"path": "../../../../../monitools_cookiecutter"
+		},
+		{
+			"path": "../../../../../django-volt-dashboard"
+		},
+		{
+			"path": "../../../../../wagtailsite"
+		},
+		{
+			"path": "../../../../../dailyfresh"
+		},
+		{
+			"path": "../../../../../django-velzon-template"
+		},
+		{
+			"path": "../../../../../velzon-react-src"
+		},
+		{
+			"path": "../../../../../metronic-src"
+		},
+		{
+			"path": "../../../../../django-velzon-template-app"
+		},
+		{
+			"path": "../../../../../vue-velzon-template-app"
 		}
 	],
 	"settings": {}
